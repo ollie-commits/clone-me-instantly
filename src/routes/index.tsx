@@ -93,12 +93,12 @@ function Headline({ text, name }: { text: string; name: string }) {
 
 function Index() {
   return (
-    <main className="mx-auto min-h-screen max-w-2xl px-5 pt-12 sm:pt-20">
+    <main className="mx-auto min-h-screen max-w-2xl px-7 pt-9 sm:px-10 sm:pt-14">
       {/* Gradient frame hugging the page edges */}
       <div aria-hidden className="page-frame pointer-events-none fixed inset-0 z-50" />
       {/* ── Hero: opens with the creator, not Dopply ─────────────────── */}
       <header className="text-center">
-        <div className="relative mx-auto h-44 w-44 sm:h-56 sm:w-56">
+        <div className="relative mx-auto h-36 w-36 sm:h-48 sm:w-48">
           <span
             aria-hidden
             className="hero-glow absolute inset-0 rounded-full bg-accent blur-3xl"
@@ -111,19 +111,19 @@ function Index() {
           <img
             src={CREATOR_PHOTO}
             alt={`@${creator.handle}`}
-            width={224}
-            height={224}
-            className="hero-portrait relative h-44 w-44 rounded-full object-cover shadow-[0_24px_60px_-20px_var(--accent)] ring-4 ring-card sm:h-56 sm:w-56"
+            width={192}
+            height={192}
+            className="hero-portrait relative h-36 w-36 rounded-full object-cover shadow-[0_20px_50px_-20px_var(--accent)] ring-4 ring-card sm:h-48 sm:w-48"
           />
         </div>
-        <p className="mt-6 inline-flex items-center gap-1.5 text-sm text-muted-foreground">
+        <p className="mt-5 inline-flex items-center gap-1.5 text-[13px] text-muted-foreground">
           <AtSign className="h-3.5 w-3.5" />
           {creator.handle}
         </p>
-        <h1 className="mt-4 font-display text-4xl font-bold leading-[1.1] tracking-[-0.02em] text-balance sm:text-[3.4rem]">
+        <h1 className="mt-3 font-display text-[1.9rem] font-bold leading-[1.12] tracking-[-0.02em] text-balance sm:text-[2.6rem]">
           <Headline text={creator.headline} name={creator.firstName} />
         </h1>
-        <p className="mx-auto mt-6 max-w-lg font-display text-2xl font-semibold leading-snug tracking-[-0.01em] text-foreground/80 text-balance sm:text-[2rem]">
+        <p className="mx-auto mt-4 max-w-md font-display text-lg font-semibold leading-snug tracking-[-0.01em] text-foreground/80 text-balance sm:text-[1.35rem]">
           {creator.subheadline}
         </p>
       </header>
