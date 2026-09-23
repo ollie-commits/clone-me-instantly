@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import {
   AtSign,
+  BadgeCheck,
   BatteryFull,
   CheckCheck,
   ChevronLeft,
