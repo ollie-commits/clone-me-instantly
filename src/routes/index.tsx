@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import {
   AtSign,
+  BadgeCheck,
   BatteryFull,
   CheckCheck,
   ChevronLeft,
@@ -136,6 +137,26 @@ function Index() {
       <div aria-hidden className="page-frame pointer-events-none fixed inset-0 z-50" />
       {/* ── Hero: opens with the creator, not Dopply ─────────────────── */}
       <header className="text-center">
+        {/* Dopply logo, top left */}
+        <div className="flex justify-start">
+          <div className="flex items-center gap-1.5">
+            <img
+              src="/images/dopply-logo.png"
+              alt="Dopply"
+              width={32}
+              height={32}
+              className="h-8 w-8 object-contain"
+            />
+            <span className="font-display text-lg font-bold tracking-tight text-foreground">
+              Dopply
+            </span>
+          </div>
+        </div>
+        {/* Welcome line above the creator */}
+        <p className="mt-5 inline-flex items-center gap-1.5 rounded-full border border-border/70 bg-card/70 px-3.5 py-1.5 text-[11px] font-medium text-muted-foreground">
+          <BadgeCheck className="h-3.5 w-3.5 text-accent" />
+          Welcome to Dopply, an official Meta Tech Provider company.
+        </p>
         <div className="relative mx-auto h-36 w-36 sm:h-48 sm:w-48">
           <span
             aria-hidden
