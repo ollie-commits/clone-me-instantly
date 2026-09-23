@@ -208,6 +208,27 @@
   display: none;
 }
 
+/* Dark green gradient frame around the page edges */
+.page-frame {
+  padding: 8px;
+  background: linear-gradient(
+    160deg,
+    #141c0b 0%,
+    #2f4a1c 28%,
+    #4a7c2f 52%,
+    #1b2610 78%,
+    #10160a 100%
+  );
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  mask-composite: exclude;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .hero-portrait,
   .hero-glow,
