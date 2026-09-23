@@ -14,7 +14,7 @@ const creator = {
   followers: "38.2K",
   nicheSummary: "First-time buyer tips & no-BS real estate advice",
   toneNotes: "warm, direct, funny",
-  headline: "Sofia, your followers ask you the same questions every week.",
+  headline: "Sofia, your followers ask you questions every week.",
   subheadline:
     "What if your AI could answer them for you, in your own voice, while you sleep?",
   sampleQAs: [
@@ -35,8 +35,6 @@ const creator = {
       a: "Follow the coffee shops and the cranes. New cafés, a grocery anchor, and building permits run 2 to 3 years ahead of the headlines.",
     },
   ],
-  bodyCopy:
-    "Your audience already trusts your advice. Dopply turns that into something they can access any time, not just when you post.",
 };
 // DATA-END
 
@@ -46,32 +44,26 @@ const STEPS = [
   {
     image: "/images/step-train.png",
     kicker: "Step 1",
-    title: "We train an AI on you",
-    body: "Your posts, captions, and voice become the foundation. No scripts, no boilerplate answers.",
-  },
-  {
-    image: "/images/step-social.png",
-    kicker: "Step 2",
-    title: "We plug into your channels",
-    body: "Instagram, TikTok, YouTube, X. Wherever your fans already find you, your AI is one tap away.",
+    title: "You train an AI on your content",
+    body: "Your posts, captions, and voice become the foundation. Then we plug it into Instagram, TikTok, YouTube, and X, wherever your fans already find you.",
   },
   {
     image: "/images/step-start.png",
-    kicker: "Step 3",
-    title: "Fans chat with it on WhatsApp",
+    kicker: "Step 2",
+    title: "Fans chat with your AI on WhatsApp, Telegram, or a web interface",
     body: "Any time of day, it replies in your tone. The same advice you'd give, the moment they ask.",
   },
   {
     image: "/images/step-earn.png",
-    kicker: "Step 4",
-    title: "Every conversation pays out",
-    body: "Fans pay to chat. You keep the lion's share, with no extra work on your side.",
+    kicker: "Step 3",
+    title: "Charge a monthly subscription",
+    body: "Fans pay a monthly price to access your AI. Predictable income, with no extra work on your side.",
   },
   {
     image: "/images/step-payout.png",
-    kicker: "Step 5",
+    kicker: "Step 4",
     title: "You get paid, hands off",
-    body: "Earnings land automatically while you keep creating. Your AI keeps the conversation going.",
+    body: "Earnings land automatically while you keep creating. Your audience has access to your knowledge 24/7.",
   },
 ];
 
@@ -120,6 +112,8 @@ function Headline({ text, name }: { text: string; name: string }) {
 function Index() {
   return (
     <main className="mx-auto min-h-screen max-w-2xl px-5 pt-12 sm:pt-20">
+      {/* Gradient frame hugging the page edges */}
+      <div aria-hidden className="page-frame pointer-events-none fixed inset-0 z-50" />
       {/* ── Hero: opens with the creator, not Dopply ─────────────────── */}
       <header className="text-center">
         <div className="relative mx-auto h-44 w-44 sm:h-56 sm:w-56">
@@ -253,9 +247,19 @@ function Index() {
           ))}
         </div>
 
-        <p className="mx-auto mt-12 max-w-md px-6 text-center font-display text-xl italic leading-relaxed text-ink-foreground/80 sm:px-12 sm:text-[1.35rem]">
-          “{creator.bodyCopy}”
-        </p>
+        <a
+          href="https://apps.apple.com/gb/app/dopply/id6775535561"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mx-auto mt-12 block w-fit max-w-full rounded-2xl bg-accent px-8 py-3.5 text-center text-accent-foreground shadow-[0_18px_40px_-16px_var(--accent)] transition-transform hover:scale-[1.03]"
+        >
+          <span className="block text-[11px] font-semibold uppercase tracking-[0.18em] text-accent-foreground/75">
+            Download on the
+          </span>
+          <span className="block font-display text-xl font-bold leading-tight">
+            App Store
+          </span>
+        </a>
       </section>
 
       {/* ── Footer ───────────────────────────────────────────────────── */}
