@@ -7,6 +7,7 @@ import {
   Phone,
   Signal,
   Video,
+  Wifi,
 } from "lucide-react";
 import dopplyFunnelAsset from "../assets/dopply-funnel.png.asset.json";
 
