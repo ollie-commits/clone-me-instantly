@@ -279,3 +279,7 @@
     animation: none !important;
   }
 }
+
+@keyframes swipe-nudge { 0%,100% { transform: translateX(0); } 50% { transform: translateX(5px); } }
+.swipe-nudge { animation: swipe-nudge 1.4s ease-in-out infinite; }
+@media (prefers-reduced-motion: reduce) { .swipe-nudge { animation: none; } }
