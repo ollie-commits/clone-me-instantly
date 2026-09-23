@@ -128,87 +128,31 @@ function Index() {
         </p>
       </header>
 
-      {/* ── The centerpiece: sample Q&A as a chat thread ─────────────── */}
-      <section className="mt-16 sm:mt-20">
-        <p className="text-center text-xs font-semibold uppercase tracking-[0.18em] text-accent">
-          Your AI, already trained
-        </p>
-        <h2 className="mx-auto mt-3 max-w-md text-center font-display text-2xl font-bold leading-snug tracking-tight text-balance sm:text-3xl">
-          What fans already ask {creator.firstName}, answered by your AI.
-        </h2>
-
-
-        <div className="mx-auto mt-10 max-w-md overflow-hidden rounded-[2rem] border bg-card shadow-[0_32px_80px_-32px_oklch(0.24_0.015_60/0.25)]">
-          {/* chat header */}
-          <div className="flex items-center gap-3 border-b px-5 py-3.5">
-            <img
-              src={CREATOR_PHOTO}
-              alt=""
-              width={36}
-              height={36}
-              loading="lazy"
-              className="h-9 w-9 rounded-full object-cover"
-            />
-            <div className="min-w-0">
-              <p className="truncate text-sm font-semibold">
-                {creator.firstName} <span className="text-muted-foreground">· AI</span>
-              </p>
-              <p className="text-xs text-muted-foreground">replies on WhatsApp</p>
-            </div>
-            <MessageCircle className="ml-auto h-4 w-4 text-muted-foreground" />
-          </div>
-
-          {/* messages */}
-          <div className="space-y-3 px-4 py-6 sm:px-5">
-            <p className="pb-1 text-center text-[11px] font-medium uppercase tracking-widest text-muted-foreground">
-              Today
-            </p>
-            {creator.sampleQAs.map((qa, i) => (
-              <div key={i} className="space-y-3">
-                <div className="max-w-[85%] rounded-2xl rounded-bl-md bg-muted px-4 py-3 text-[15px] leading-relaxed text-foreground">
-                  {qa.q}
-                </div>
-                <div className="ml-auto max-w-[85%] rounded-2xl rounded-br-md bg-accent px-4 py-3 text-[15px] leading-relaxed text-accent-foreground">
-                  {qa.a}
-                </div>
-              </div>
-            ))}
-            {/* typing indicator */}
-            <div className="flex items-center gap-1.5 rounded-2xl rounded-br-md bg-accent px-4 py-3.5 w-fit ml-auto">
-              <span className="typing-dot h-1.5 w-1.5 rounded-full bg-accent-foreground" />
-              <span className="typing-dot h-1.5 w-1.5 rounded-full bg-accent-foreground" />
-              <span className="typing-dot h-1.5 w-1.5 rounded-full bg-accent-foreground" />
-            </div>
-          </div>
-        </div>
-
-      </section>
-
-      {/* ── How this works: Dopply's pitch, below the fold ───────────── */}
+      {/* ── How this works: Dopply's pitch ───────────────────────────── */}
       <section
         id="how-it-works"
-        className="mt-20 scroll-mt-8 rounded-[2.5rem] bg-ink py-12 text-ink-foreground sm:mt-28 sm:py-16"
+        className="mt-11 scroll-mt-8 rounded-[2.5rem] bg-ink py-9 text-ink-foreground sm:mt-14 sm:py-12"
       >
-        <div className="px-6 sm:px-12">
-          <p className="text-center text-xs font-semibold uppercase tracking-[0.18em] text-accent-soft">
+        <div className="px-5 sm:px-10">
+          <p className="text-center text-[11px] font-semibold uppercase tracking-[0.18em] text-accent-soft">
             How Dopply works
           </p>
-          <h2 className="mx-auto mt-3 max-w-sm text-center font-display text-2xl font-bold leading-snug tracking-tight text-balance text-ink-foreground sm:text-3xl">
+          <h2 className="mx-auto mt-2.5 max-w-sm text-center font-display text-xl font-bold leading-snug tracking-tight text-balance text-ink-foreground sm:text-2xl">
             Built on what you've already made.
           </h2>
-          <p className="mt-3 text-center text-[13px] text-ink-foreground/50">
+          <p className="mt-2 text-center text-xs text-ink-foreground/50">
             Swipe through the steps
           </p>
         </div>
 
         {/* swipeable carousel */}
-        <div className="no-scrollbar mt-8 flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth px-6 pb-2 sm:px-12">
+        <div className="no-scrollbar mt-6 flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth px-5 pb-2 sm:px-10">
           {STEPS.map((step, i) => (
             <article
               key={i}
-              className="w-[78%] shrink-0 snap-center rounded-[1.75rem] border border-ink-foreground/10 bg-ink-foreground/[0.06] p-5 sm:w-[46%]"
+              className="w-[74%] shrink-0 snap-center rounded-[1.75rem] border border-ink-foreground/10 bg-ink-foreground/[0.06] p-4 sm:w-[44%]"
             >
-              <div className="flex h-36 items-center justify-center rounded-2xl bg-ink-foreground/[0.06] p-3">
+              <div className="flex h-28 items-center justify-center rounded-2xl bg-ink-foreground/[0.06] p-3">
                 <img
                   src={step.image}
                   alt=""
@@ -216,13 +160,13 @@ function Index() {
                   className="max-h-full w-auto object-contain"
                 />
               </div>
-              <p className="mt-5 text-[11px] font-semibold uppercase tracking-[0.18em] text-accent-soft">
+              <p className="mt-4 text-[10px] font-semibold uppercase tracking-[0.18em] text-accent-soft">
                 {step.kicker}
               </p>
-              <p className="mt-2 font-display text-lg font-bold leading-snug text-ink-foreground">
+              <p className="mt-1.5 font-display text-base font-bold leading-snug text-ink-foreground">
                 {step.title}
               </p>
-              <p className="mt-2 text-[15px] leading-relaxed text-ink-foreground/70">
+              <p className="mt-1.5 text-[13px] leading-relaxed text-ink-foreground/70">
                 {step.body}
               </p>
             </article>
@@ -233,19 +177,19 @@ function Index() {
           href="https://apps.apple.com/gb/app/dopply/id6775535561"
           target="_blank"
           rel="noopener noreferrer"
-          className="mx-auto mt-12 block w-fit max-w-full rounded-2xl bg-accent px-8 py-3.5 text-center text-accent-foreground shadow-[0_18px_40px_-16px_var(--accent)] transition-transform hover:scale-[1.03]"
+          className="mx-auto mt-9 block w-fit max-w-full rounded-2xl bg-accent px-7 py-3 text-center text-accent-foreground shadow-[0_18px_40px_-16px_var(--accent)] transition-transform hover:scale-[1.03]"
         >
-          <span className="block text-[11px] font-semibold uppercase tracking-[0.18em] text-accent-foreground/75">
+          <span className="block text-[10px] font-semibold uppercase tracking-[0.18em] text-accent-foreground/75">
             Download on the
           </span>
-          <span className="block font-display text-xl font-bold leading-tight">
+          <span className="block font-display text-lg font-bold leading-tight">
             App Store
           </span>
         </a>
       </section>
 
       {/* ── Footer ───────────────────────────────────────────────────── */}
-      <footer className="mt-16 pb-12 text-center">
+      <footer className="mt-12 pb-10 text-center">
         <p className="text-xs text-muted-foreground">
           Powered by{" "}
           <span className="font-display text-sm font-semibold text-foreground">
