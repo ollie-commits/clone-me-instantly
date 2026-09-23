@@ -154,11 +154,11 @@ function Index() {
           </div>
         </div>
         {/* Welcome line above the creator */}
-        <p className="mt-5 inline-flex items-center gap-1.5 rounded-full border border-border/70 bg-card/70 px-3.5 py-1.5 text-[11px] font-medium text-muted-foreground">
+        <p className="relative z-20 mx-auto mt-5 flex w-fit max-w-full items-center justify-center gap-1.5 rounded-full border border-border/70 bg-card px-3.5 py-2 text-[11px] font-medium leading-snug text-muted-foreground shadow-sm">
           <BadgeCheck className="h-3.5 w-3.5 text-accent" />
           Welcome to Dopply, an official Meta Tech Provider company.
         </p>
-        <div className="relative mx-auto h-36 w-36 sm:h-48 sm:w-48">
+        <div className="relative z-10 mx-auto mt-5 h-36 w-36 sm:h-48 sm:w-48">
           <span
             aria-hidden
             className="hero-glow absolute inset-0 rounded-full bg-accent blur-3xl"
