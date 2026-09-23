@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { MessageCircle, AtSign } from "lucide-react";
+import { AtSign } from "lucide-react";
 
 /* ==================================================================
    CREATOR DATA — swap block.
@@ -16,25 +16,7 @@ const creator = {
   toneNotes: "warm, direct, funny",
   headline: "Sofia, your followers ask you questions every week.",
   subheadline:
-    "What if your AI could answer them for you, in your own voice, while you sleep?",
-  sampleQAs: [
-    {
-      q: "Is now a good time to buy, or should I keep renting?",
-      a: "Nobody can time the market, but you can time your life. If you're staying 5+ years and the monthly cost beats your rent, buy. Otherwise rent and invest the difference.",
-    },
-    {
-      q: "How much do I actually need saved for a first home?",
-      a: "3.5 to 5% down gets you in most markets, but budget another 2 to 4% for closing costs. If you don't have that plus a 6 month cushion yet, wait.",
-    },
-    {
-      q: "Should I buy a rental property or just invest in index funds?",
-      a: "Only buy a rental if you want a second job. Index funds win for 95% of people. Real estate only wins when you get a below market deal.",
-    },
-    {
-      q: "How do you spot a neighborhood that's about to take off?",
-      a: "Follow the coffee shops and the cranes. New cafés, a grocery anchor, and building permits run 2 to 3 years ahead of the headlines.",
-    },
-  ],
+    "We build AI twins that answer these questions for you in your exact tone of voice.",
 };
 // DATA-END
 
