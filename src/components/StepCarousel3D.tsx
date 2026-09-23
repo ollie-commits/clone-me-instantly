@@ -22,8 +22,8 @@ export function StepCarousel3D({ steps }: { steps: Step[] }) {
       <div
         className="relative mx-auto h-[23rem] w-full overflow-hidden"
         style={{ perspective: "1100px" }}
-        onTouchStart={(e) => onStart(e.touches[0].clientX)}
-        onTouchEnd={(e) => onEnd(e.changedTouches[0].clientX)}
+        onTouchStart={(e) => onStart(e.touches[0]?.clientX ?? 0)}
+        onTouchEnd={(e) => onEnd(e.changedTouches[0]?.clientX ?? 0)}
         onMouseDown={(e) => onStart(e.clientX)}
         onMouseUp={(e) => onEnd(e.clientX)}
         onKeyDown={(e) => {
