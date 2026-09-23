@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { MapPin, Sparkles, Users, MessageCircle, AtSign } from "lucide-react";
+import { MessageCircle, AtSign } from "lucide-react";
 
 /* ==================================================================
    CREATOR DATA — swap block.
@@ -14,39 +14,73 @@ const creator = {
   followers: "38.2K",
   nicheSummary: "First-time buyer tips & no-BS real estate advice",
   toneNotes: "warm, direct, funny",
-  headline: "Sofia, your followers ask you the same real estate questions every week.",
+  headline: "Sofia, your followers ask you the same questions every week.",
   subheadline:
-    "What if your AI could answer them for you — in your own voice — while you sleep?",
+    "What if your AI could answer them for you, in your own voice, while you sleep?",
   sampleQAs: [
     {
       q: "Is now a good time to buy, or should I keep renting?",
-      a: "Nobody can time the market — but you can time your life. If you're staying 5+ years and the monthly cost beats your rent, buy. Otherwise rent and invest the difference.",
+      a: "Nobody can time the market, but you can time your life. If you're staying 5+ years and the monthly cost beats your rent, buy. Otherwise rent and invest the difference.",
     },
     {
       q: "How much do I actually need saved for a first home?",
-      a: "3.5–5% down gets you in most markets — but budget another 2–4% for closing costs. If you don't have that plus a 6-month cushion yet, wait.",
+      a: "3.5 to 5% down gets you in most markets, but budget another 2 to 4% for closing costs. If you don't have that plus a 6 month cushion yet, wait.",
     },
     {
       q: "Should I buy a rental property or just invest in index funds?",
-      a: "Only buy a rental if you want a second job. Index funds win for 95% of people — real estate only wins when you get a below-market deal.",
+      a: "Only buy a rental if you want a second job. Index funds win for 95% of people. Real estate only wins when you get a below market deal.",
     },
     {
       q: "How do you spot a neighborhood that's about to take off?",
-      a: "Follow the coffee shops and the cranes. New cafés, a grocery anchor, and building permits run 2–3 years ahead of the headlines.",
+      a: "Follow the coffee shops and the cranes. New cafés, a grocery anchor, and building permits run 2 to 3 years ahead of the headlines.",
     },
   ],
   bodyCopy:
-    "Your audience already trusts your advice — Dopply turns that into something they can access any time, not just when you post.",
+    "Your audience already trusts your advice. Dopply turns that into something they can access any time, not just when you post.",
 };
 // DATA-END
 
 const CREATOR_PHOTO = "/images/creator.jpg";
 
+const STEPS = [
+  {
+    image: "/images/step-train.png",
+    kicker: "Step 1",
+    title: "We train an AI on you",
+    body: "Your posts, captions, and voice become the foundation. No scripts, no boilerplate answers.",
+  },
+  {
+    image: "/images/step-social.png",
+    kicker: "Step 2",
+    title: "We plug into your channels",
+    body: "Instagram, TikTok, YouTube, X. Wherever your fans already find you, your AI is one tap away.",
+  },
+  {
+    image: "/images/step-start.png",
+    kicker: "Step 3",
+    title: "Fans chat with it on WhatsApp",
+    body: "Any time of day, it replies in your tone. The same advice you'd give, the moment they ask.",
+  },
+  {
+    image: "/images/step-earn.png",
+    kicker: "Step 4",
+    title: "Every conversation pays out",
+    body: "Fans pay to chat. You keep the lion's share, with no extra work on your side.",
+  },
+  {
+    image: "/images/step-payout.png",
+    kicker: "Step 5",
+    title: "You get paid, hands off",
+    body: "Earnings land automatically while you keep creating. Your AI keeps the conversation going.",
+  },
+];
+
+
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       {
-        title: `${creator.firstName} — your AI, on WhatsApp · Dopply`,
+        title: `${creator.firstName}: your AI, on WhatsApp · Dopply`,
       },
       {
         name: "description",
@@ -54,7 +88,7 @@ export const Route = createFileRoute("/")({
       },
       {
         property: "og:title",
-        content: `${creator.firstName} — your AI, on WhatsApp · Dopply`,
+        content: `${creator.firstName}: your AI, on WhatsApp · Dopply`,
       },
       {
         property: "og:description",
@@ -83,59 +117,50 @@ function Headline({ text, name }: { text: string; name: string }) {
   );
 }
 
-function Pill({
-  icon: Icon,
-  children,
-}: {
-  icon: typeof MapPin;
-  children: React.ReactNode;
-}) {
-  return (
-    <span className="inline-flex items-center gap-2 rounded-full bg-accent-soft px-4 py-1.5 text-[13px] text-foreground/90">
-      <Icon className="h-3.5 w-3.5 text-accent" strokeWidth={2} />
-      {children}
-    </span>
-  );
-}
-
 function Index() {
   return (
-    <main className="mx-auto min-h-screen max-w-2xl px-5 pt-14 sm:pt-20">
+    <main className="mx-auto min-h-screen max-w-2xl px-5 pt-12 sm:pt-20">
       {/* ── Hero: opens with the creator, not Dopply ─────────────────── */}
       <header className="text-center">
-        <img
-          src={CREATOR_PHOTO}
-          alt={`@${creator.handle}`}
-          width={96}
-          height={96}
-          className="mx-auto h-24 w-24 rounded-3xl object-cover shadow-[0_16px_40px_-16px_var(--accent)] ring-1 ring-black/5"
-        />
-        <p className="mt-5 inline-flex items-center gap-1.5 text-sm text-muted-foreground">
+        <div className="relative mx-auto h-44 w-44 sm:h-56 sm:w-56">
+          <span
+            aria-hidden
+            className="hero-glow absolute inset-0 rounded-full bg-accent blur-3xl"
+          />
+          <span
+            aria-hidden
+            className="hero-glow absolute -inset-3 rounded-full bg-accent/40 blur-2xl"
+            style={{ animationDelay: "1.2s" }}
+          />
+          <img
+            src={CREATOR_PHOTO}
+            alt={`@${creator.handle}`}
+            width={224}
+            height={224}
+            className="hero-portrait relative h-44 w-44 rounded-full object-cover shadow-[0_24px_60px_-20px_var(--accent)] ring-4 ring-card sm:h-56 sm:w-56"
+          />
+        </div>
+        <p className="mt-6 inline-flex items-center gap-1.5 text-sm text-muted-foreground">
           <AtSign className="h-3.5 w-3.5" />
           {creator.handle}
         </p>
         <h1 className="mt-4 font-display text-4xl font-bold leading-[1.1] tracking-[-0.02em] text-balance sm:text-[3.4rem]">
           <Headline text={creator.headline} name={creator.firstName} />
         </h1>
-        <p className="mx-auto mt-5 max-w-md text-lg leading-relaxed text-muted-foreground text-balance">
+        <p className="mx-auto mt-6 max-w-lg font-display text-2xl font-semibold leading-snug tracking-[-0.01em] text-foreground/80 text-balance sm:text-[2rem]">
           {creator.subheadline}
         </p>
-        <a
-          href="#how-it-works"
-          className="mt-9 inline-flex items-center justify-center rounded-full bg-accent px-8 py-3.5 text-[15px] font-semibold text-accent-foreground shadow-[0_14px_32px_-12px_var(--accent)] transition hover:opacity-90 active:scale-[0.98]"
-        >
-          See how this works for you
-        </a>
       </header>
 
       {/* ── The centerpiece: sample Q&A as a chat thread ─────────────── */}
-      <section className="mt-20 sm:mt-24">
+      <section className="mt-16 sm:mt-20">
         <p className="text-center text-xs font-semibold uppercase tracking-[0.18em] text-accent">
           Your AI, already trained
         </p>
         <h2 className="mx-auto mt-3 max-w-md text-center font-display text-2xl font-bold leading-snug tracking-tight text-balance sm:text-3xl">
-          What fans already ask {creator.firstName} — answered by your AI.
+          What fans already ask {creator.firstName}, answered by your AI.
         </h2>
+
 
         <div className="mx-auto mt-10 max-w-md overflow-hidden rounded-[2rem] border bg-card shadow-[0_32px_80px_-32px_oklch(0.24_0.015_60/0.25)]">
           {/* chat header */}
@@ -181,56 +206,54 @@ function Index() {
           </div>
         </div>
 
-        {/* ── Social proof strip ─────────────────────────────────────── */}
-        <div className="mt-10 flex flex-wrap items-center justify-center gap-2">
-          <Pill icon={MapPin}>{creator.nicheSummary}</Pill>
-          <Pill icon={Sparkles}>{creator.toneNotes}</Pill>
-          <Pill icon={Users}>{creator.followers} followers</Pill>
-        </div>
       </section>
 
       {/* ── How this works: Dopply's pitch, below the fold ───────────── */}
       <section
         id="how-it-works"
-        className="mt-20 scroll-mt-8 rounded-[2.5rem] bg-ink px-6 py-12 text-ink-foreground sm:mt-28 sm:px-12 sm:py-16"
+        className="mt-20 scroll-mt-8 rounded-[2.5rem] bg-ink py-12 text-ink-foreground sm:mt-28 sm:py-16"
       >
-        <p className="text-center text-xs font-semibold uppercase tracking-[0.18em] text-accent-soft">
-          How Dopply works
-        </p>
-        <h2 className="mx-auto mt-3 max-w-sm text-center font-display text-2xl font-bold leading-snug tracking-tight text-balance text-ink-foreground sm:text-3xl">
-          Built on what you've already made.
-        </h2>
+        <div className="px-6 sm:px-12">
+          <p className="text-center text-xs font-semibold uppercase tracking-[0.18em] text-accent-soft">
+            How Dopply works
+          </p>
+          <h2 className="mx-auto mt-3 max-w-sm text-center font-display text-2xl font-bold leading-snug tracking-tight text-balance text-ink-foreground sm:text-3xl">
+            Built on what you've already made.
+          </h2>
+          <p className="mt-3 text-center text-[13px] text-ink-foreground/50">
+            Swipe through the steps
+          </p>
+        </div>
 
-        <ol className="mx-auto mt-10 max-w-md space-y-7">
-          {[
-            {
-              title: "We train an AI on you",
-              body: "Your posts, captions, and voice become the foundation — no scripts, no boilerplate answers.",
-            },
-            {
-              title: "Fans chat with it on WhatsApp",
-              body: "Any time of day, it replies in your tone — the same advice you'd give, the moment they ask.",
-            },
-            {
-              title: "You earn from every conversation",
-              body: "Completely hands-off. You keep creating; your AI keeps the conversation going.",
-            },
-          ].map((step, i) => (
-            <li key={i} className="flex gap-4">
-              <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-ink-foreground/20 bg-ink-foreground/10 font-display text-sm font-semibold text-accent-soft">
-                {i + 1}
-              </span>
-              <div>
-                <p className="font-semibold text-ink-foreground">{step.title}</p>
-                <p className="mt-1 text-[15px] leading-relaxed text-ink-foreground/70">
-                  {step.body}
-                </p>
+        {/* swipeable carousel */}
+        <div className="no-scrollbar mt-8 flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth px-6 pb-2 sm:px-12">
+          {STEPS.map((step, i) => (
+            <article
+              key={i}
+              className="w-[78%] shrink-0 snap-center rounded-[1.75rem] border border-ink-foreground/10 bg-ink-foreground/[0.06] p-5 sm:w-[46%]"
+            >
+              <div className="flex h-36 items-center justify-center rounded-2xl bg-ink-foreground/[0.06] p-3">
+                <img
+                  src={step.image}
+                  alt=""
+                  loading="lazy"
+                  className="max-h-full w-auto object-contain"
+                />
               </div>
-            </li>
+              <p className="mt-5 text-[11px] font-semibold uppercase tracking-[0.18em] text-accent-soft">
+                {step.kicker}
+              </p>
+              <p className="mt-2 font-display text-lg font-bold leading-snug text-ink-foreground">
+                {step.title}
+              </p>
+              <p className="mt-2 text-[15px] leading-relaxed text-ink-foreground/70">
+                {step.body}
+              </p>
+            </article>
           ))}
-        </ol>
+        </div>
 
-        <p className="mx-auto mt-12 max-w-md text-center font-display text-xl italic leading-relaxed text-ink-foreground/80 sm:text-[1.35rem]">
+        <p className="mx-auto mt-12 max-w-md px-6 text-center font-display text-xl italic leading-relaxed text-ink-foreground/80 sm:px-12 sm:text-[1.35rem]">
           “{creator.bodyCopy}”
         </p>
       </section>
