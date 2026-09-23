@@ -10,6 +10,7 @@ import {
   Video,
   Wifi,
 } from "lucide-react";
+import { StepCarousel3D } from "../components/StepCarousel3D";
 import dopplyFunnelAsset from "../assets/dopply-funnel.png.asset.json";
 
 /* ==================================================================
@@ -327,37 +328,11 @@ function Index() {
             Built on what you've already made.
           </h2>
           <p className="mt-2 text-center text-xs text-ink-foreground/50">
-            Swipe through the steps
+            Swipe or tap the arrows to see each step →
           </p>
         </div>
 
-        {/* swipeable carousel */}
-        <div className="no-scrollbar mt-6 flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth px-5 pb-2 sm:px-10">
-          {STEPS.map((step, i) => (
-            <article
-              key={i}
-              className="w-[74%] shrink-0 snap-center rounded-[1.75rem] border border-ink-foreground/10 bg-ink-foreground/[0.06] p-4 sm:w-[44%]"
-            >
-              <div className="flex h-28 items-center justify-center rounded-2xl bg-ink-foreground/[0.06] p-3">
-                <img
-                  src={step.image}
-                  alt=""
-                  loading="lazy"
-                  className="max-h-full w-auto object-contain"
-                />
-              </div>
-              <p className="mt-4 text-[10px] font-semibold uppercase tracking-[0.18em] text-accent-soft">
-                {step.kicker}
-              </p>
-              <p className="mt-1.5 font-display text-base font-bold leading-snug text-ink-foreground">
-                {step.title}
-              </p>
-              <p className="mt-1.5 text-[13px] leading-relaxed text-ink-foreground/70">
-                {step.body}
-              </p>
-            </article>
-          ))}
-        </div>
+        <StepCarousel3D steps={STEPS} />
 
         <a
           href="https://apps.apple.com/gb/app/dopply/id6775535561"
