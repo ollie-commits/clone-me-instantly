@@ -117,59 +117,50 @@ function Headline({ text, name }: { text: string; name: string }) {
   );
 }
 
-function Pill({
-  icon: Icon,
-  children,
-}: {
-  icon: typeof MapPin;
-  children: React.ReactNode;
-}) {
-  return (
-    <span className="inline-flex items-center gap-2 rounded-full bg-accent-soft px-4 py-1.5 text-[13px] text-foreground/90">
-      <Icon className="h-3.5 w-3.5 text-accent" strokeWidth={2} />
-      {children}
-    </span>
-  );
-}
-
 function Index() {
   return (
-    <main className="mx-auto min-h-screen max-w-2xl px-5 pt-14 sm:pt-20">
+    <main className="mx-auto min-h-screen max-w-2xl px-5 pt-12 sm:pt-20">
       {/* ── Hero: opens with the creator, not Dopply ─────────────────── */}
       <header className="text-center">
-        <img
-          src={CREATOR_PHOTO}
-          alt={`@${creator.handle}`}
-          width={96}
-          height={96}
-          className="mx-auto h-24 w-24 rounded-3xl object-cover shadow-[0_16px_40px_-16px_var(--accent)] ring-1 ring-black/5"
-        />
-        <p className="mt-5 inline-flex items-center gap-1.5 text-sm text-muted-foreground">
+        <div className="relative mx-auto h-44 w-44 sm:h-56 sm:w-56">
+          <span
+            aria-hidden
+            className="hero-glow absolute inset-0 rounded-full bg-accent blur-3xl"
+          />
+          <span
+            aria-hidden
+            className="hero-glow absolute -inset-3 rounded-full bg-accent/40 blur-2xl"
+            style={{ animationDelay: "1.2s" }}
+          />
+          <img
+            src={CREATOR_PHOTO}
+            alt={`@${creator.handle}`}
+            width={224}
+            height={224}
+            className="hero-portrait relative h-44 w-44 rounded-full object-cover shadow-[0_24px_60px_-20px_var(--accent)] ring-4 ring-card sm:h-56 sm:w-56"
+          />
+        </div>
+        <p className="mt-6 inline-flex items-center gap-1.5 text-sm text-muted-foreground">
           <AtSign className="h-3.5 w-3.5" />
           {creator.handle}
         </p>
         <h1 className="mt-4 font-display text-4xl font-bold leading-[1.1] tracking-[-0.02em] text-balance sm:text-[3.4rem]">
           <Headline text={creator.headline} name={creator.firstName} />
         </h1>
-        <p className="mx-auto mt-5 max-w-md text-lg leading-relaxed text-muted-foreground text-balance">
+        <p className="mx-auto mt-6 max-w-lg font-display text-2xl font-semibold leading-snug tracking-[-0.01em] text-foreground/80 text-balance sm:text-[2rem]">
           {creator.subheadline}
         </p>
-        <a
-          href="#how-it-works"
-          className="mt-9 inline-flex items-center justify-center rounded-full bg-accent px-8 py-3.5 text-[15px] font-semibold text-accent-foreground shadow-[0_14px_32px_-12px_var(--accent)] transition hover:opacity-90 active:scale-[0.98]"
-        >
-          See how this works for you
-        </a>
       </header>
 
       {/* ── The centerpiece: sample Q&A as a chat thread ─────────────── */}
-      <section className="mt-20 sm:mt-24">
+      <section className="mt-16 sm:mt-20">
         <p className="text-center text-xs font-semibold uppercase tracking-[0.18em] text-accent">
           Your AI, already trained
         </p>
         <h2 className="mx-auto mt-3 max-w-md text-center font-display text-2xl font-bold leading-snug tracking-tight text-balance sm:text-3xl">
-          What fans already ask {creator.firstName} — answered by your AI.
+          What fans already ask {creator.firstName}, answered by your AI.
         </h2>
+
 
         <div className="mx-auto mt-10 max-w-md overflow-hidden rounded-[2rem] border bg-card shadow-[0_32px_80px_-32px_oklch(0.24_0.015_60/0.25)]">
           {/* chat header */}
