@@ -1,5 +1,13 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { AtSign } from "lucide-react";
+import {
+  AtSign,
+  BatteryFull,
+  CheckCheck,
+  ChevronLeft,
+  Phone,
+  Signal,
+  Video,
+} from "lucide-react";
 import dopplyFunnelAsset from "../assets/dopply-funnel.png.asset.json";
 
 /* ==================================================================
@@ -35,15 +43,19 @@ const AUDIENCE_QUESTIONS = [
   "What costs do first-time buyers forget?",
 ];
 
-const AI_REPLIES = [
-  "It can be, if you can comfortably afford the monthly cost and plan to stay put for at least five years.",
-  "Most first-time buyers aim for 5% to 10%, plus a separate pot for fees, surveys, and moving costs.",
-  "Selling first gives you certainty. Buying first only makes sense if you can comfortably carry both homes for a while.",
-  "A fixed rate gives you predictable payments. A tracker may suit you if your budget can handle rates moving up.",
-  "Check for damp, cracks, water pressure, natural light, storage, noise, and what the street feels like at different times.",
-  "Compare recent sold prices nearby, not asking prices, then adjust for size, condition, parking, and the exact street.",
-  "It can be, especially for lower maintenance and warranties, but check service charges, room sizes, and the developer's track record.",
-  "Surveys, legal fees, mortgage fees, insurance, removals, repairs, and service charges are the ones people most often miss.",
+/* The two Q&As shown in the WhatsApp screenshot mock. Kept in the swap
+   block so per-creator questions and replies can be replaced too. */
+const WHATSAPP_CHAT = [
+  {
+    question: "Should I buy before I sell?",
+    reply:
+      "Selling first gives you certainty. Buying first only makes sense if you can comfortably carry both homes for a while.",
+  },
+  {
+    question: "Fixed rate or tracker mortgage?",
+    reply:
+      "A fixed rate gives you predictable payments. A tracker may suit you if your budget can handle rates moving up.",
+  },
 ];
 /* QUESTION-END */
 
