@@ -206,50 +206,58 @@ function Index() {
           </div>
         </div>
 
-        {/* ── Social proof strip ─────────────────────────────────────── */}
-        <div className="mt-10 flex flex-wrap items-center justify-center gap-2">
-          <Pill icon={MapPin}>{creator.nicheSummary}</Pill>
-          <Pill icon={Sparkles}>{creator.toneNotes}</Pill>
-          <Pill icon={Users}>{creator.followers} followers</Pill>
-        </div>
       </section>
 
       {/* ── How this works: Dopply's pitch, below the fold ───────────── */}
       <section
         id="how-it-works"
-        className="mt-20 scroll-mt-8 rounded-[2.5rem] bg-ink px-6 py-12 text-ink-foreground sm:mt-28 sm:px-12 sm:py-16"
+        className="mt-20 scroll-mt-8 rounded-[2.5rem] bg-ink py-12 text-ink-foreground sm:mt-28 sm:py-16"
       >
-        <p className="text-center text-xs font-semibold uppercase tracking-[0.18em] text-accent-soft">
-          How Dopply works
-        </p>
-        <h2 className="mx-auto mt-3 max-w-sm text-center font-display text-2xl font-bold leading-snug tracking-tight text-balance text-ink-foreground sm:text-3xl">
-          Built on what you've already made.
-        </h2>
+        <div className="px-6 sm:px-12">
+          <p className="text-center text-xs font-semibold uppercase tracking-[0.18em] text-accent-soft">
+            How Dopply works
+          </p>
+          <h2 className="mx-auto mt-3 max-w-sm text-center font-display text-2xl font-bold leading-snug tracking-tight text-balance text-ink-foreground sm:text-3xl">
+            Built on what you've already made.
+          </h2>
+          <p className="mt-3 text-center text-[13px] text-ink-foreground/50">
+            Swipe through the steps
+          </p>
+        </div>
 
-        <ol className="mx-auto mt-10 max-w-md space-y-7">
-          {[
-            {
-              title: "We train an AI on you",
-              body: "Your posts, captions, and voice become the foundation — no scripts, no boilerplate answers.",
-            },
-            {
-              title: "Fans chat with it on WhatsApp",
-              body: "Any time of day, it replies in your tone — the same advice you'd give, the moment they ask.",
-            },
-            {
-              title: "You earn from every conversation",
-              body: "Completely hands-off. You keep creating; your AI keeps the conversation going.",
-            },
-          ].map((step, i) => (
-            <li key={i} className="flex gap-4">
-              <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-ink-foreground/20 bg-ink-foreground/10 font-display text-sm font-semibold text-accent-soft">
-                {i + 1}
-              </span>
-              <div>
-                <p className="font-semibold text-ink-foreground">{step.title}</p>
-                <p className="mt-1 text-[15px] leading-relaxed text-ink-foreground/70">
-                  {step.body}
-                </p>
+        {/* swipeable carousel */}
+        <div className="no-scrollbar mt-8 flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth px-6 pb-2 sm:px-12">
+          {STEPS.map((step, i) => (
+            <article
+              key={i}
+              className="w-[78%] shrink-0 snap-center rounded-[1.75rem] border border-ink-foreground/10 bg-ink-foreground/[0.06] p-5 sm:w-[46%]"
+            >
+              <div className="flex h-36 items-center justify-center rounded-2xl bg-ink-foreground/[0.06] p-3">
+                <img
+                  src={step.image}
+                  alt=""
+                  loading="lazy"
+                  className="max-h-full w-auto object-contain"
+                />
+              </div>
+              <p className="mt-5 text-[11px] font-semibold uppercase tracking-[0.18em] text-accent-soft">
+                {step.kicker}
+              </p>
+              <p className="mt-2 font-display text-lg font-bold leading-snug text-ink-foreground">
+                {step.title}
+              </p>
+              <p className="mt-2 text-[15px] leading-relaxed text-ink-foreground/70">
+                {step.body}
+              </p>
+            </article>
+          ))}
+        </div>
+
+        <p className="mx-auto mt-12 max-w-md px-6 text-center font-display text-xl italic leading-relaxed text-ink-foreground/80 sm:px-12 sm:text-[1.35rem]">
+          “{creator.bodyCopy}”
+        </p>
+      </section>
+
               </div>
             </li>
           ))}
