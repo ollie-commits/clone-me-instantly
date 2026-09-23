@@ -35,8 +35,6 @@ const creator = {
       a: "Follow the coffee shops and the cranes. New cafés, a grocery anchor, and building permits run 2 to 3 years ahead of the headlines.",
     },
   ],
-  bodyCopy:
-    "Your audience already trusts your advice. Dopply turns that into something they can access any time, not just when you post.",
 };
 // DATA-END
 
