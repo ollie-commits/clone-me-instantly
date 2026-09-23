@@ -9,30 +9,30 @@ import { MapPin, Sparkles, Users, MessageCircle, AtSign } from "lucide-react";
    ================================================================== */
 // DATA-START
 const creator = {
-  handle: "sofiamariexplores",
+  handle: "sofiahomes",
   firstName: "Sofia",
   followers: "38.2K",
-  nicheSummary: "Solo female travel & budget backpacking tips for Gen Z women",
+  nicheSummary: "First-time buyer tips & no-BS real estate advice",
   toneNotes: "warm, direct, funny",
-  headline: "Sofia, your followers ask you the same travel questions every week.",
+  headline: "Sofia, your followers ask you the same real estate questions every week.",
   subheadline:
     "What if your AI could answer them for you — in your own voice — while you sleep?",
   sampleQAs: [
     {
-      q: "Is Southeast Asia actually safe solo?",
-      a: "Yes, if you're smart about it — I've done 8 countries alone and never had a real scare. Stick to well-lit areas at night and trust your gut.",
+      q: "Is now a good time to buy, or should I keep renting?",
+      a: "Nobody can time the market — but you can time your life. If you're staying 5+ years and the monthly cost beats your rent, buy. Otherwise rent and invest the difference.",
     },
     {
-      q: "How do you afford to travel so much?",
-      a: "Budget doesn't mean miserable. I do $30/day in most of SEA — hostels, street food, and I never book activities through hotels.",
+      q: "How much do I actually need saved for a first home?",
+      a: "3.5–5% down gets you in most markets — but budget another 2–4% for closing costs. If you don't have that plus a 6-month cushion yet, wait.",
     },
     {
-      q: "Best backpack for a 3-month trip?",
-      a: "40L max. If it doesn't fit in 40L you're overpacking, I promise.",
+      q: "Should I buy a rental property or just invest in index funds?",
+      a: "Only buy a rental if you want a second job. Index funds win for 95% of people — real estate only wins when you get a below-market deal.",
     },
     {
-      q: "How do you meet people while traveling solo?",
-      a: "Hostels with a common area, always. Book free walking tours your first day in a new city — instant group of people to grab dinner with.",
+      q: "How do you spot a neighborhood that's about to take off?",
+      a: "Follow the coffee shops and the cranes. New cafés, a grocery anchor, and building permits run 2–3 years ahead of the headlines.",
     },
   ],
   bodyCopy:
@@ -91,7 +91,7 @@ function Pill({
   children: React.ReactNode;
 }) {
   return (
-    <span className="inline-flex items-center gap-2 rounded-full border bg-card px-4 py-1.5 text-[13px] text-muted-foreground">
+    <span className="inline-flex items-center gap-2 rounded-full bg-accent-soft px-4 py-1.5 text-[13px] text-foreground/90">
       <Icon className="h-3.5 w-3.5 text-accent" strokeWidth={2} />
       {children}
     </span>
@@ -114,7 +114,7 @@ function Index() {
           <AtSign className="h-3.5 w-3.5" />
           {creator.handle}
         </p>
-        <h1 className="mt-4 font-display text-4xl font-medium leading-[1.12] tracking-tight text-balance sm:text-[3.4rem]">
+        <h1 className="mt-4 font-display text-4xl font-bold leading-[1.1] tracking-[-0.02em] text-balance sm:text-[3.4rem]">
           <Headline text={creator.headline} name={creator.firstName} />
         </h1>
         <p className="mx-auto mt-5 max-w-md text-lg leading-relaxed text-muted-foreground text-balance">
@@ -133,7 +133,7 @@ function Index() {
         <p className="text-center text-xs font-semibold uppercase tracking-[0.18em] text-accent">
           Your AI, already trained
         </p>
-        <h2 className="mx-auto mt-3 max-w-md text-center font-display text-2xl font-medium leading-snug tracking-tight text-balance sm:text-3xl">
+        <h2 className="mx-auto mt-3 max-w-md text-center font-display text-2xl font-bold leading-snug tracking-tight text-balance sm:text-3xl">
           What fans already ask {creator.firstName} — answered by your AI.
         </h2>
 
@@ -192,12 +192,12 @@ function Index() {
       {/* ── How this works: Dopply's pitch, below the fold ───────────── */}
       <section
         id="how-it-works"
-        className="mt-20 scroll-mt-8 rounded-[2.5rem] bg-accent-soft px-6 py-12 sm:mt-28 sm:px-12 sm:py-16"
+        className="mt-20 scroll-mt-8 rounded-[2.5rem] bg-ink px-6 py-12 text-ink-foreground sm:mt-28 sm:px-12 sm:py-16"
       >
-        <p className="text-center text-xs font-semibold uppercase tracking-[0.18em] text-accent">
+        <p className="text-center text-xs font-semibold uppercase tracking-[0.18em] text-accent-soft">
           How Dopply works
         </p>
-        <h2 className="mx-auto mt-3 max-w-sm text-center font-display text-2xl font-medium leading-snug tracking-tight text-balance sm:text-3xl">
+        <h2 className="mx-auto mt-3 max-w-sm text-center font-display text-2xl font-bold leading-snug tracking-tight text-balance text-ink-foreground sm:text-3xl">
           Built on what you've already made.
         </h2>
 
@@ -217,12 +217,12 @@ function Index() {
             },
           ].map((step, i) => (
             <li key={i} className="flex gap-4">
-              <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-accent/30 bg-card font-display text-sm font-semibold text-accent">
+              <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-ink-foreground/20 bg-ink-foreground/10 font-display text-sm font-semibold text-accent-soft">
                 {i + 1}
               </span>
               <div>
-                <p className="font-semibold">{step.title}</p>
-                <p className="mt-1 text-[15px] leading-relaxed text-muted-foreground">
+                <p className="font-semibold text-ink-foreground">{step.title}</p>
+                <p className="mt-1 text-[15px] leading-relaxed text-ink-foreground/70">
                   {step.body}
                 </p>
               </div>
@@ -230,7 +230,7 @@ function Index() {
           ))}
         </ol>
 
-        <p className="mx-auto mt-12 max-w-md text-center font-display text-xl italic leading-relaxed text-foreground/80 sm:text-[1.35rem]">
+        <p className="mx-auto mt-12 max-w-md text-center font-display text-xl italic leading-relaxed text-ink-foreground/80 sm:text-[1.35rem]">
           “{creator.bodyCopy}”
         </p>
       </section>

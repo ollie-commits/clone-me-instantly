@@ -5,12 +5,11 @@
 @custom-variant dark (&:is(.dark *));
 
 /*
- * Design system — "Creator letter" editorial.
+ * Design system — "Field notes" green (from client reference screenshot).
  *
- * Warm paper background, serif display type (Fraunces), quiet sans body
- * (Instrument Sans), and ONE accent variable (--accent) that every
- * accent-colored element pulls from: CTA button, outgoing chat bubbles,
- * headline accent, links, rings, shadows.
+ * Pale sage background, deep forest-green ink in a heavy geometric sans
+ * (Poppins display), quiet DM Sans body, white rounded cards, one
+ * near-black ink panel, sage chip tint.
  *
  * Per-creator theming: override --accent (and --accent-foreground) on
  * :root or the page wrapper. Nothing else needs to change.
@@ -39,63 +38,69 @@
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
   --color-accent-soft: var(--accent-soft);
+  --color-ink: var(--ink);
+  --color-ink-foreground: var(--ink-foreground);
   --color-destructive: var(--destructive);
   --color-destructive-foreground: var(--destructive-foreground);
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-  --font-display: "Fraunces", "Georgia", serif;
-  --font-sans: "Instrument Sans", "Helvetica Neue", sans-serif;
+  --font-display: "Poppins", "Avenir Next", sans-serif;
+  --font-sans: "DM Sans", "Helvetica Neue", sans-serif;
 }
 
 :root {
   --radius: 1rem;
 
   /* THE accent. Swap this per creator — everything follows it. */
-  --accent: #7c3aed;
+  --accent: #4a7c2f;
   --accent-foreground: #ffffff;
-  --accent-soft: color-mix(in oklab, var(--accent) 10%, white);
+  --accent-soft: #cfe0ba;
 
-  --background: oklch(0.982 0.007 85);
-  --foreground: oklch(0.24 0.015 60);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.24 0.015 60);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.24 0.015 60);
-  --primary: oklch(0.24 0.015 60);
-  --primary-foreground: oklch(0.98 0.005 85);
-  --secondary: oklch(0.96 0.009 85);
-  --secondary-foreground: oklch(0.3 0.015 60);
-  --muted: oklch(0.955 0.008 85);
-  --muted-foreground: oklch(0.5 0.02 70);
+  --background: #dfe9d0;
+  --foreground: #33491f;
+  --card: #fdfefb;
+  --card-foreground: #33491f;
+  --popover: #fdfefb;
+  --popover-foreground: #33491f;
+  --primary: #33491f;
+  --primary-foreground: #f4f6ea;
+  --secondary: #e6efda;
+  --secondary-foreground: #33491f;
+  --muted: #e6efda;
+  --muted-foreground: #62704f;
+  --ink: #221f17;
+  --ink-foreground: #f4f6ea;
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: oklch(0.915 0.008 85);
-  --input: oklch(0.915 0.008 85);
+  --border: #cbdbb4;
+  --input: #cbdbb4;
   --ring: var(--accent);
 }
 
 .dark {
-  --accent: #7c3aed;
+  --accent: #4a7c2f;
   --accent-foreground: #ffffff;
   --accent-soft: color-mix(in oklab, var(--accent) 22%, black);
 
-  --background: oklch(0.16 0.01 60);
-  --foreground: oklch(0.96 0.005 85);
-  --card: oklch(0.21 0.012 60);
-  --card-foreground: oklch(0.96 0.005 85);
-  --popover: oklch(0.21 0.012 60);
-  --popover-foreground: oklch(0.96 0.005 85);
-  --primary: oklch(0.96 0.005 85);
-  --primary-foreground: oklch(0.2 0.01 60);
-  --secondary: oklch(0.26 0.012 60);
-  --secondary-foreground: oklch(0.96 0.005 85);
-  --muted: oklch(0.26 0.012 60);
-  --muted-foreground: oklch(0.7 0.015 70);
+  --background: #17200f;
+  --foreground: #eef2e4;
+  --card: #1f2916;
+  --card-foreground: #eef2e4;
+  --popover: #1f2916;
+  --popover-foreground: #eef2e4;
+  --primary: #eef2e4;
+  --primary-foreground: #17200f;
+  --secondary: #263019;
+  --secondary-foreground: #eef2e4;
+  --muted: #263019;
+  --muted-foreground: #a7b494;
+  --ink: #221f17;
+  --ink-foreground: #f4f6ea;
   --destructive: oklch(0.704 0.191 22.216);
   --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
+  --border: #ffffff1a;
+  --input: #ffffff26;
   --ring: var(--accent);
 }
 
