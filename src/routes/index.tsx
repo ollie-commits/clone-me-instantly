@@ -14,7 +14,7 @@ const creator = {
   followers: "38.2K",
   nicheSummary: "First-time buyer tips & no-BS real estate advice",
   toneNotes: "warm, direct, funny",
-  headline: "Sofia, your followers ask you the same questions every week.",
+  headline: "Sofia, your followers ask you questions every week.",
   subheadline:
     "What if your AI could answer them for you, in your own voice, while you sleep?",
   sampleQAs: [
@@ -46,32 +46,26 @@ const STEPS = [
   {
     image: "/images/step-train.png",
     kicker: "Step 1",
-    title: "We train an AI on you",
-    body: "Your posts, captions, and voice become the foundation. No scripts, no boilerplate answers.",
-  },
-  {
-    image: "/images/step-social.png",
-    kicker: "Step 2",
-    title: "We plug into your channels",
-    body: "Instagram, TikTok, YouTube, X. Wherever your fans already find you, your AI is one tap away.",
+    title: "You train an AI on your content",
+    body: "Your posts, captions, and voice become the foundation. Then we plug it into Instagram, TikTok, YouTube, and X, wherever your fans already find you.",
   },
   {
     image: "/images/step-start.png",
-    kicker: "Step 3",
-    title: "Fans chat with it on WhatsApp",
+    kicker: "Step 2",
+    title: "Fans chat with your AI on WhatsApp, Telegram, or a web interface",
     body: "Any time of day, it replies in your tone. The same advice you'd give, the moment they ask.",
   },
   {
     image: "/images/step-earn.png",
-    kicker: "Step 4",
-    title: "Every conversation pays out",
-    body: "Fans pay to chat. You keep the lion's share, with no extra work on your side.",
+    kicker: "Step 3",
+    title: "Charge a monthly subscription",
+    body: "Fans pay a monthly price to access your AI. Predictable income, with no extra work on your side.",
   },
   {
     image: "/images/step-payout.png",
-    kicker: "Step 5",
+    kicker: "Step 4",
     title: "You get paid, hands off",
-    body: "Earnings land automatically while you keep creating. Your AI keeps the conversation going.",
+    body: "Earnings land automatically while you keep creating. Your audience has access to your knowledge 24/7.",
   },
 ];
 
