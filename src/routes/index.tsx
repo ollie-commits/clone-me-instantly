@@ -1,7 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import {
   AtSign,
-  BadgeCheck,
   BatteryFull,
   CheckCheck,
   ChevronLeft,
@@ -155,7 +154,14 @@ function Index() {
         </div>
         {/* Welcome line above the creator */}
         <p className="relative z-20 mx-auto mt-5 flex w-fit max-w-full items-center justify-center gap-1.5 rounded-full border border-border/70 bg-card px-3.5 py-2 text-[11px] font-medium leading-snug text-muted-foreground shadow-sm">
-          <BadgeCheck className="h-3.5 w-3.5 text-accent" />
+          <svg
+            aria-hidden
+            viewBox="0 0 36 36"
+            className="h-4 w-4 text-[#0064e0]"
+            fill="currentColor"
+          >
+            <path d="M35.998 23.243c0 2.29-1.223 4.345-3.377 4.345-2.155 0-3.807-2.054-3.807-4.345 0-2.29 1.223-4.345 3.377-4.345 2.155 0 3.807 2.054 3.807 4.345zm-3.807 6.672c3.683 0 5.524-3.325 5.524-6.672 0-3.347-1.84-6.672-5.524-6.672-1.833 0-3.166.832-4.07 2.085-.75-1.282-2.04-2.085-3.747-2.085-1.64 0-2.917.73-3.794 1.914v-1.47a.404.404 0 0 0-.404-.403h-1.55a.404.404 0 0 0-.404.404v12.4c0 .223.18.404.404.404h1.55c.223 0 .404-.18.404-.404v-6.87c0-2.29 1.223-4.345 3.377-4.345 2.155 0 3.807 2.054 3.807 4.345 0 2.29-1.652 4.345-3.807 4.345-1.14 0-2.053-.577-2.64-1.516a.4.4 0 0 0-.487-.163l-1.368.598a.403.403 0 0 0-.187.57c.988 1.66 2.63 2.805 4.913 2.805 1.707 0 2.997-.803 3.747-2.085.904 1.253 2.237 2.085 4.07 2.085z" />
+          </svg>
           Welcome to Dopply, an official Meta Tech Provider company.
         </p>
         <div className="relative z-10 mx-auto mt-5 h-36 w-36 sm:h-48 sm:w-48">
