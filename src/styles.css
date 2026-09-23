@@ -212,28 +212,6 @@
   }
 }
 
-@keyframes vortex-turn {
-  to {
-    transform: translate(-50%, -50%) rotate(360deg);
-  }
-}
-
-@keyframes dopply-reveal {
-  0%,
-  20% {
-    opacity: 0.78;
-    transform: translateY(-3px) scale(0.94);
-  }
-  60% {
-    opacity: 1;
-    transform: translateY(2px) scale(1.03);
-  }
-  100% {
-    opacity: 0.9;
-    transform: translateY(-3px) scale(0.97);
-  }
-}
-
 .question-funnel {
   background:
     radial-gradient(circle at 50% 65%, color-mix(in oklab, var(--accent) 16%, transparent), transparent 34%),
@@ -252,56 +230,32 @@
 .funnel-neck::after {
   position: absolute;
   top: 0;
-  bottom: 0;
-  width: 2px;
+  height: 100%;
+  width: 48%;
   content: "";
-  background: linear-gradient(to bottom, var(--border), transparent 88%);
+  border-bottom: 2px dotted color-mix(in oklab, var(--accent) 65%, transparent);
 }
 
 .funnel-neck::before {
-  left: 12%;
-  transform: rotate(-35deg);
-  transform-origin: top;
+  left: 1%;
+  border-left: 2px dotted color-mix(in oklab, var(--accent) 65%, transparent);
+  transform: skewX(31deg);
+  transform-origin: bottom right;
 }
 
 .funnel-neck::after {
-  right: 12%;
-  transform: rotate(35deg);
-  transform-origin: top;
+  right: 1%;
+  border-right: 2px dotted color-mix(in oklab, var(--accent) 65%, transparent);
+  transform: skewX(-31deg);
+  transform-origin: bottom left;
 }
 
-.vortex-ring {
-  position: absolute;
-  left: 50%;
-  top: 70%;
-  display: block;
-  border: 2px solid color-mix(in oklab, var(--accent) 60%, transparent);
-  border-top-color: transparent;
-  border-radius: 999px;
-  transform: translate(-50%, -50%);
-  animation: vortex-turn 5s linear infinite;
-}
-
-.vortex-ring-one {
-  width: 7.5rem;
-  height: 2.5rem;
-}
-
-.vortex-ring-two {
-  width: 5rem;
-  height: 1.75rem;
-  animation-duration: 3.8s;
-  animation-direction: reverse;
-}
-
-.vortex-ring-three {
-  width: 2.5rem;
-  height: 0.9rem;
-  animation-duration: 2.7s;
-}
-
-.dopply-reveal {
-  animation: dopply-reveal 4.5s ease-in-out infinite alternate;
+.reply-bubble {
+  background: linear-gradient(
+    145deg,
+    var(--accent),
+    color-mix(in oklab, var(--accent) 82%, var(--foreground))
+  );
 }
 
 .no-scrollbar {
@@ -311,34 +265,20 @@
   display: none;
 }
 
-/* Dark green gradient frame around the page edges */
+/* Soft dark-green glow around the page edges. */
 .page-frame {
-  padding: 8px;
-  background: linear-gradient(
-    160deg,
-    #141c0b 0%,
-    #2f4a1c 28%,
-    #4a7c2f 52%,
-    #1b2610 78%,
-    #10160a 100%
-  );
-  -webkit-mask:
-    linear-gradient(#000 0 0) content-box,
-    linear-gradient(#000 0 0);
-  -webkit-mask-composite: xor;
-  mask:
-    linear-gradient(#000 0 0) content-box,
-    linear-gradient(#000 0 0);
-  mask-composite: exclude;
+  box-shadow:
+    inset 0 20px 30px -23px color-mix(in oklab, var(--foreground) 88%, transparent),
+    inset 0 -20px 30px -23px color-mix(in oklab, var(--foreground) 88%, transparent),
+    inset 20px 0 30px -23px color-mix(in oklab, var(--foreground) 88%, transparent),
+    inset -20px 0 30px -23px color-mix(in oklab, var(--foreground) 88%, transparent);
 }
 
 @media (prefers-reduced-motion: reduce) {
   .hero-portrait,
   .hero-glow,
   .typing-dot,
-  .question-bubble,
-  .vortex-ring,
-  .dopply-reveal {
+  .question-bubble {
     animation: none !important;
   }
 }

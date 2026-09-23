@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { AtSign } from "lucide-react";
+import dopplyFunnelAsset from "../assets/dopply-funnel.png.asset.json";
 
 /* ==================================================================
    CREATOR DATA — swap block.
@@ -32,6 +33,17 @@ const AUDIENCE_QUESTIONS = [
   "How do I know if I'm overpaying?",
   "Is a new build worth it?",
   "What costs do first-time buyers forget?",
+];
+
+const AI_REPLIES = [
+  "It can be, if you can comfortably afford the monthly cost and plan to stay put for at least five years.",
+  "Most first-time buyers aim for 5% to 10%, plus a separate pot for fees, surveys, and moving costs.",
+  "Selling first gives you certainty. Buying first only makes sense if you can comfortably carry both homes for a while.",
+  "A fixed rate gives you predictable payments. A tracker may suit you if your budget can handle rates moving up.",
+  "Check for damp, cracks, water pressure, natural light, storage, noise, and what the street feels like at different times.",
+  "Compare recent sold prices nearby, not asking prices, then adjust for size, condition, parking, and the exact street.",
+  "It can be, especially for lower maintenance and warranties, but check service charges, room sizes, and the developer's track record.",
+  "Surveys, legal fees, mortgage fees, insurance, removals, repairs, and service charges are the ones people most often miss.",
 ];
 /* QUESTION-END */
 
@@ -143,11 +155,7 @@ function Index() {
 
       {/* Question funnel: recurring audience questions become one AI twin. */}
       <section className="mt-12 text-center sm:mt-16">
-        <h2 className="mx-auto max-w-md font-display text-[1.45rem] font-bold leading-tight text-balance sm:text-[1.8rem]">
-          How do you answer all of these questions without burning out?
-        </h2>
-
-        <div className="question-funnel relative mx-auto mt-7 max-w-xl overflow-hidden rounded-[1.75rem] border border-border/70 bg-card/55 px-3 pb-6 pt-5 sm:px-6 sm:pb-8">
+        <div className="question-funnel relative mx-auto max-w-xl overflow-hidden rounded-[1.75rem] border border-border/70 bg-card/55 px-3 pb-7 pt-5 sm:px-6 sm:pb-9">
           <div className="relative z-10 grid grid-cols-2 gap-2.5 sm:gap-3">
             {AUDIENCE_QUESTIONS.map((question, index) => (
               <p
@@ -162,26 +170,36 @@ function Index() {
             ))}
           </div>
 
-          <div aria-hidden className="funnel-neck relative z-0 mx-auto mt-3 h-24 w-40 sm:h-28 sm:w-48">
-            <span className="vortex-ring vortex-ring-one" />
-            <span className="vortex-ring vortex-ring-two" />
-            <span className="vortex-ring vortex-ring-three" />
-          </div>
+          <div aria-hidden className="funnel-neck relative z-0 mx-auto mt-2 h-24 w-44 sm:h-28 sm:w-52" />
 
-          <div className="relative z-10 -mt-3 flex flex-col items-center">
-            <div className="dopply-reveal relative flex h-28 w-28 items-center justify-center sm:h-32 sm:w-32">
-              <span aria-hidden className="absolute inset-3 rounded-full bg-accent/30 blur-2xl" />
+          <div className="relative z-10 -mt-5 flex flex-col items-center">
+            <div className="relative flex h-36 w-full max-w-[18rem] items-center justify-center sm:h-44 sm:max-w-sm">
               <img
-                src="/images/step-social.png"
+                src={dopplyFunnelAsset.url}
                 alt="Dopply AI twin"
                 loading="lazy"
                 className="relative max-h-full max-w-full object-contain"
               />
             </div>
-            <p className="mt-2 max-w-xs font-display text-lg font-bold leading-snug text-foreground sm:text-xl">
-              Your AI twin can reply to all of these.
-            </p>
           </div>
+        </div>
+
+        <h2 className="mx-auto mt-7 max-w-md font-display text-[1.45rem] font-bold leading-tight text-balance sm:text-[1.8rem]">
+          How do you answer all of these questions without burning out?
+        </h2>
+
+        <p className="mx-auto mt-4 max-w-xs font-display text-lg font-bold leading-snug text-foreground sm:text-xl">
+          Your AI twin can reply to all of these.
+        </p>
+
+        <div className="mt-5 space-y-2.5 text-left sm:mx-auto sm:max-w-xl sm:space-y-3">
+          {AI_REPLIES.map((reply, index) => (
+            <div key={AUDIENCE_QUESTIONS[index]} className="flex justify-end">
+              <p className="reply-bubble max-w-[88%] rounded-2xl rounded-br-md bg-accent px-3.5 py-3 text-[12px] font-medium leading-relaxed text-accent-foreground shadow-sm sm:max-w-[82%] sm:px-4 sm:text-[13px]">
+                {reply}
+              </p>
+            </div>
+          ))}
         </div>
       </section>
 
