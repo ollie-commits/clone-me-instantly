@@ -258,16 +258,6 @@ function Index() {
         </p>
       </section>
 
-              </div>
-            </li>
-          ))}
-        </ol>
-
-        <p className="mx-auto mt-12 max-w-md text-center font-display text-xl italic leading-relaxed text-ink-foreground/80 sm:text-[1.35rem]">
-          “{creator.bodyCopy}”
-        </p>
-      </section>
-
       {/* ── Footer ───────────────────────────────────────────────────── */}
       <footer className="mt-16 pb-12 text-center">
         <p className="text-xs text-muted-foreground">
