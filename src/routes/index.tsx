@@ -22,6 +22,19 @@ const creator = {
 
 const CREATOR_PHOTO = "/images/creator.jpg";
 
+/* QUESTION-START: swap these prompts with each creator's recurring questions. */
+const AUDIENCE_QUESTIONS = [
+  "Is now actually a good time to buy?",
+  "How much deposit do I really need?",
+  "Should I buy before I sell?",
+  "Fixed rate or tracker mortgage?",
+  "What should I look for at a viewing?",
+  "How do I know if I'm overpaying?",
+  "Is a new build worth it?",
+  "What costs do first-time buyers forget?",
+];
+/* QUESTION-END */
+
 const STEPS = [
   {
     image: "/images/step-train.png",
@@ -127,6 +140,50 @@ function Index() {
           {creator.subheadline}
         </p>
       </header>
+
+      {/* Question funnel: recurring audience questions become one AI twin. */}
+      <section className="mt-12 text-center sm:mt-16">
+        <h2 className="mx-auto max-w-md font-display text-[1.45rem] font-bold leading-tight text-balance sm:text-[1.8rem]">
+          How do you answer all of these questions without burning out?
+        </h2>
+
+        <div className="question-funnel relative mx-auto mt-7 max-w-xl overflow-hidden rounded-[1.75rem] border border-border/70 bg-card/55 px-3 pb-6 pt-5 sm:px-6 sm:pb-8">
+          <div className="relative z-10 grid grid-cols-2 gap-2.5 sm:gap-3">
+            {AUDIENCE_QUESTIONS.map((question, index) => (
+              <p
+                key={question}
+                className={`question-bubble rounded-2xl bg-card px-3 py-2.5 text-left text-[11px] font-medium leading-snug text-card-foreground shadow-sm sm:text-xs ${
+                  index % 3 === 1 ? "translate-y-2" : ""
+                }`}
+                style={{ animationDelay: `${index * 120}ms` }}
+              >
+                {question}
+              </p>
+            ))}
+          </div>
+
+          <div aria-hidden className="funnel-neck relative z-0 mx-auto mt-3 h-24 w-40 sm:h-28 sm:w-48">
+            <span className="vortex-ring vortex-ring-one" />
+            <span className="vortex-ring vortex-ring-two" />
+            <span className="vortex-ring vortex-ring-three" />
+          </div>
+
+          <div className="relative z-10 -mt-3 flex flex-col items-center">
+            <div className="dopply-reveal relative flex h-28 w-28 items-center justify-center sm:h-32 sm:w-32">
+              <span aria-hidden className="absolute inset-3 rounded-full bg-accent/30 blur-2xl" />
+              <img
+                src="/images/step-social.png"
+                alt="Dopply AI twin"
+                loading="lazy"
+                className="relative max-h-full max-w-full object-contain"
+              />
+            </div>
+            <p className="mt-2 max-w-xs font-display text-lg font-bold leading-snug text-foreground sm:text-xl">
+              Your AI twin can reply to all of these.
+            </p>
+          </div>
+        </div>
+      </section>
 
       {/* ── How this works: Dopply's pitch ───────────────────────────── */}
       <section

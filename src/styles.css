@@ -201,6 +201,109 @@
   animation: dopply-glow 5s ease-in-out infinite;
 }
 
+/* Audience questions converge into the creator's Dopply twin. */
+@keyframes question-drift {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-0.4deg);
+  }
+  50% {
+    transform: translateY(3px) rotate(0.4deg);
+  }
+}
+
+@keyframes vortex-turn {
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes dopply-reveal {
+  0%,
+  20% {
+    opacity: 0.78;
+    transform: translateY(-3px) scale(0.94);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(2px) scale(1.03);
+  }
+  100% {
+    opacity: 0.9;
+    transform: translateY(-3px) scale(0.97);
+  }
+}
+
+.question-funnel {
+  background:
+    radial-gradient(circle at 50% 65%, color-mix(in oklab, var(--accent) 16%, transparent), transparent 34%),
+    color-mix(in oklab, var(--card) 58%, transparent);
+}
+
+.question-bubble {
+  animation: question-drift 4s ease-in-out infinite;
+}
+
+.question-bubble:nth-child(even) {
+  animation-direction: reverse;
+}
+
+.funnel-neck::before,
+.funnel-neck::after {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  content: "";
+  background: linear-gradient(to bottom, var(--border), transparent 88%);
+}
+
+.funnel-neck::before {
+  left: 12%;
+  transform: rotate(-35deg);
+  transform-origin: top;
+}
+
+.funnel-neck::after {
+  right: 12%;
+  transform: rotate(35deg);
+  transform-origin: top;
+}
+
+.vortex-ring {
+  position: absolute;
+  left: 50%;
+  top: 70%;
+  display: block;
+  border: 2px solid color-mix(in oklab, var(--accent) 60%, transparent);
+  border-top-color: transparent;
+  border-radius: 999px;
+  transform: translate(-50%, -50%);
+  animation: vortex-turn 5s linear infinite;
+}
+
+.vortex-ring-one {
+  width: 7.5rem;
+  height: 2.5rem;
+}
+
+.vortex-ring-two {
+  width: 5rem;
+  height: 1.75rem;
+  animation-duration: 3.8s;
+  animation-direction: reverse;
+}
+
+.vortex-ring-three {
+  width: 2.5rem;
+  height: 0.9rem;
+  animation-duration: 2.7s;
+}
+
+.dopply-reveal {
+  animation: dopply-reveal 4.5s ease-in-out infinite alternate;
+}
+
 .no-scrollbar {
   scrollbar-width: none;
 }
@@ -232,7 +335,10 @@
 @media (prefers-reduced-motion: reduce) {
   .hero-portrait,
   .hero-glow,
-  .typing-dot {
+  .typing-dot,
+  .question-bubble,
+  .vortex-ring,
+  .dopply-reveal {
     animation: none !important;
   }
 }
