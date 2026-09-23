@@ -80,7 +80,7 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       {
-        title: `${creator.firstName} — your AI, on WhatsApp · Dopply`,
+        title: `${creator.firstName}: your AI, on WhatsApp · Dopply`,
       },
       {
         name: "description",
@@ -88,7 +88,7 @@ export const Route = createFileRoute("/")({
       },
       {
         property: "og:title",
-        content: `${creator.firstName} — your AI, on WhatsApp · Dopply`,
+        content: `${creator.firstName}: your AI, on WhatsApp · Dopply`,
       },
       {
         property: "og:description",
