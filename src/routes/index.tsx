@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { MapPin, Sparkles, Users, MessageCircle, AtSign } from "lucide-react";
+import { MessageCircle, AtSign } from "lucide-react";
 
 /* ==================================================================
    CREATOR DATA — swap block.
@@ -14,33 +14,67 @@ const creator = {
   followers: "38.2K",
   nicheSummary: "First-time buyer tips & no-BS real estate advice",
   toneNotes: "warm, direct, funny",
-  headline: "Sofia, your followers ask you the same real estate questions every week.",
+  headline: "Sofia, your followers ask you the same questions every week.",
   subheadline:
-    "What if your AI could answer them for you — in your own voice — while you sleep?",
+    "What if your AI could answer them for you, in your own voice, while you sleep?",
   sampleQAs: [
     {
       q: "Is now a good time to buy, or should I keep renting?",
-      a: "Nobody can time the market — but you can time your life. If you're staying 5+ years and the monthly cost beats your rent, buy. Otherwise rent and invest the difference.",
+      a: "Nobody can time the market, but you can time your life. If you're staying 5+ years and the monthly cost beats your rent, buy. Otherwise rent and invest the difference.",
     },
     {
       q: "How much do I actually need saved for a first home?",
-      a: "3.5–5% down gets you in most markets — but budget another 2–4% for closing costs. If you don't have that plus a 6-month cushion yet, wait.",
+      a: "3.5 to 5% down gets you in most markets, but budget another 2 to 4% for closing costs. If you don't have that plus a 6 month cushion yet, wait.",
     },
     {
       q: "Should I buy a rental property or just invest in index funds?",
-      a: "Only buy a rental if you want a second job. Index funds win for 95% of people — real estate only wins when you get a below-market deal.",
+      a: "Only buy a rental if you want a second job. Index funds win for 95% of people. Real estate only wins when you get a below market deal.",
     },
     {
       q: "How do you spot a neighborhood that's about to take off?",
-      a: "Follow the coffee shops and the cranes. New cafés, a grocery anchor, and building permits run 2–3 years ahead of the headlines.",
+      a: "Follow the coffee shops and the cranes. New cafés, a grocery anchor, and building permits run 2 to 3 years ahead of the headlines.",
     },
   ],
   bodyCopy:
-    "Your audience already trusts your advice — Dopply turns that into something they can access any time, not just when you post.",
+    "Your audience already trusts your advice. Dopply turns that into something they can access any time, not just when you post.",
 };
 // DATA-END
 
 const CREATOR_PHOTO = "/images/creator.jpg";
+
+const STEPS = [
+  {
+    image: "/images/step-train.png",
+    kicker: "Step 1",
+    title: "We train an AI on you",
+    body: "Your posts, captions, and voice become the foundation. No scripts, no boilerplate answers.",
+  },
+  {
+    image: "/images/step-social.png",
+    kicker: "Step 2",
+    title: "We plug into your channels",
+    body: "Instagram, TikTok, YouTube, X. Wherever your fans already find you, your AI is one tap away.",
+  },
+  {
+    image: "/images/step-start.png",
+    kicker: "Step 3",
+    title: "Fans chat with it on WhatsApp",
+    body: "Any time of day, it replies in your tone. The same advice you'd give, the moment they ask.",
+  },
+  {
+    image: "/images/step-earn.png",
+    kicker: "Step 4",
+    title: "Every conversation pays out",
+    body: "Fans pay to chat. You keep the lion's share, with no extra work on your side.",
+  },
+  {
+    image: "/images/step-payout.png",
+    kicker: "Step 5",
+    title: "You get paid, hands off",
+    body: "Earnings land automatically while you keep creating. Your AI keeps the conversation going.",
+  },
+];
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
