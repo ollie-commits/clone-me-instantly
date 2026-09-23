@@ -1,5 +1,14 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { AtSign } from "lucide-react";
+import {
+  AtSign,
+  BatteryFull,
+  CheckCheck,
+  ChevronLeft,
+  Phone,
+  Signal,
+  Video,
+  Wifi,
+} from "lucide-react";
 import dopplyFunnelAsset from "../assets/dopply-funnel.png.asset.json";
 
 /* ==================================================================
@@ -35,15 +44,19 @@ const AUDIENCE_QUESTIONS = [
   "What costs do first-time buyers forget?",
 ];
 
-const AI_REPLIES = [
-  "It can be, if you can comfortably afford the monthly cost and plan to stay put for at least five years.",
-  "Most first-time buyers aim for 5% to 10%, plus a separate pot for fees, surveys, and moving costs.",
-  "Selling first gives you certainty. Buying first only makes sense if you can comfortably carry both homes for a while.",
-  "A fixed rate gives you predictable payments. A tracker may suit you if your budget can handle rates moving up.",
-  "Check for damp, cracks, water pressure, natural light, storage, noise, and what the street feels like at different times.",
-  "Compare recent sold prices nearby, not asking prices, then adjust for size, condition, parking, and the exact street.",
-  "It can be, especially for lower maintenance and warranties, but check service charges, room sizes, and the developer's track record.",
-  "Surveys, legal fees, mortgage fees, insurance, removals, repairs, and service charges are the ones people most often miss.",
+/* The two Q&As shown in the WhatsApp screenshot mock. Kept in the swap
+   block so per-creator questions and replies can be replaced too. */
+const WHATSAPP_CHAT = [
+  {
+    question: "Should I buy before I sell?",
+    reply:
+      "Selling first gives you certainty. Buying first only makes sense if you can comfortably carry both homes for a while.",
+  },
+  {
+    question: "Fixed rate or tracker mortgage?",
+    reply:
+      "A fixed rate gives you predictable payments. A tracker may suit you if your budget can handle rates moving up.",
+  },
 ];
 /* QUESTION-END */
 
@@ -192,14 +205,66 @@ function Index() {
           Your AI twin can reply to all of these.
         </p>
 
-        <div className="mt-5 space-y-2.5 text-left sm:mx-auto sm:max-w-xl sm:space-y-3">
-          {AI_REPLIES.map((reply, index) => (
-            <div key={AUDIENCE_QUESTIONS[index]} className="flex justify-end">
-              <p className="reply-bubble max-w-[88%] rounded-2xl rounded-br-md bg-accent px-3.5 py-3 text-[12px] font-medium leading-relaxed text-accent-foreground shadow-sm sm:max-w-[82%] sm:px-4 sm:text-[13px]">
-                {reply}
+        {/* WhatsApp screenshot mock — colours are WhatsApp's own brand UI,
+            intentionally not theme tokens. */}
+        <div className="mx-auto mt-5 max-w-sm overflow-hidden rounded-[1.4rem] border border-border/80 text-left shadow-[0_28px_70px_-32px_rgba(20,28,11,0.5)]">
+          {/* status bar */}
+          <div className="flex items-center justify-between bg-[#f7f4ef] px-5 pb-1 pt-2 text-[11px] font-semibold text-[#1d1d1f]">
+            <span>16:48</span>
+            <span className="flex items-center gap-1">
+              <Signal className="h-3 w-3" />
+              <Wifi className="h-3 w-3" />
+              <BatteryFull className="h-3.5 w-3.5" />
+            </span>
+          </div>
+          {/* chat header with the creator's photo and name */}
+          <div className="flex items-center gap-2.5 border-b border-[#e4ded3] bg-[#f7f4ef] px-3 pb-2.5">
+            <ChevronLeft className="h-5 w-5 shrink-0 text-[#1d1d1f]" />
+            <img
+              src={CREATOR_PHOTO}
+              alt={`@${creator.handle}`}
+              className="h-8 w-8 rounded-full object-cover"
+            />
+            <div className="min-w-0 flex-1 leading-tight">
+              <p className="truncate text-[13px] font-semibold text-[#1d1d1f]">
+                {creator.firstName}
               </p>
+              <p className="text-[10px] text-[#667781]">online</p>
             </div>
-          ))}
+            <Video className="h-[18px] w-[18px] shrink-0 text-[#1d1d1f]" />
+            <Phone className="h-4 w-4 shrink-0 text-[#1d1d1f]" />
+          </div>
+          {/* chat body */}
+          <div className="wa-wallpaper space-y-2 px-3 py-4">
+            <p className="mx-auto w-fit rounded-md bg-white/85 px-2.5 py-0.5 text-[10px] font-medium text-[#54656f] shadow-sm">
+              Today
+            </p>
+            {WHATSAPP_CHAT.map((pair, index) => (
+              <div key={pair.question}>
+                <div className="flex justify-start">
+                  <div className="wa-bubble max-w-[82%] rounded-[10px] rounded-tl-[3px] bg-white px-2.5 pb-1 pt-1.5 shadow-sm">
+                    <p className="text-[12.5px] leading-snug text-[#111b21]">
+                      {pair.question}
+                    </p>
+                    <p className="mt-0.5 text-right text-[9px] text-[#667781]">
+                      13:4{index + 1}
+                    </p>
+                  </div>
+                </div>
+                <div className="mt-2 flex justify-end">
+                  <div className="wa-bubble max-w-[82%] rounded-[10px] rounded-tr-[3px] bg-[#d9fdd3] px-2.5 pb-1 pt-1.5 shadow-sm">
+                    <p className="text-[12.5px] leading-snug text-[#111b21]">
+                      {pair.reply}
+                    </p>
+                    <p className="mt-0.5 flex items-center justify-end gap-1 text-[9px] text-[#667781]">
+                      13:4{index + 1}
+                      <CheckCheck className="h-3 w-3 text-[#53bdeb]" />
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
