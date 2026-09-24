@@ -10,6 +10,7 @@ import {
   Wifi,
 } from "lucide-react";
 import { StepCarousel3D } from "../components/StepCarousel3D";
+import metaTechProvider from "../assets/meta-tech-provider.png.asset.json";
 
 /* ==================================================================
    CREATOR DATA — swap block.
