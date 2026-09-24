@@ -241,7 +241,7 @@ function Index() {
 
           {/* the questions, floating around him */}
           {AUDIENCE_QUESTIONS.map((question, index) => {
-            const pos = QUESTION_POSITIONS[index];
+            const pos = QUESTION_POSITIONS[index % QUESTION_POSITIONS.length]!;
             return (
               <div
                 key={question}
