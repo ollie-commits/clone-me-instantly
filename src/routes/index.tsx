@@ -155,9 +155,9 @@ function Index() {
           <img
             src="/images/dopply-logo.png"
             alt="Dopply"
-            width={128}
-            height={40}
-            className="h-9 w-auto object-contain sm:h-10"
+            width={96}
+            height={30}
+            className="h-7 w-auto object-contain sm:h-8"
           />
         </div>
         <div className="h-8" />
@@ -387,11 +387,15 @@ function Index() {
 
       {/* ── Footer ───────────────────────────────────────────────────── */}
       <footer className="mt-12 pb-10 text-center">
-        <p className="text-xs text-muted-foreground">
-          Powered by{" "}
-          <span className="font-display text-sm font-semibold text-foreground">
-            Dopply
-          </span>
+        <p className="flex items-center justify-center gap-2 text-xs text-muted-foreground">
+          Powered by
+          <img
+            src="/images/dopply-logo.png"
+            alt="Dopply"
+            width={96}
+            height={30}
+            className="h-6 w-auto object-contain"
+          />
         </p>
       </footer>
     </main>
