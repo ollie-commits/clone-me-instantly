@@ -139,18 +139,13 @@ function Index() {
       <header className="text-center">
         {/* Dopply logo, top left */}
         <div className="flex justify-start">
-          <div className="flex items-center gap-1.5">
-            <img
-              src="/images/dopply-logo.png"
-              alt="Dopply"
-              width={32}
-              height={32}
-              className="h-8 w-8 object-contain"
-            />
-            <span className="font-display text-lg font-bold tracking-tight text-foreground">
-              Dopply
-            </span>
-          </div>
+          <img
+            src="/images/dopply-logo.png"
+            alt="Dopply"
+            width={96}
+            height={30}
+            className="h-7 w-auto object-contain"
+          />
         </div>
         {/* Meta badge above the creator: logo on top, text below */}
         <div className="relative z-20 mx-auto mt-5 flex w-fit max-w-full flex-col items-center gap-1.5 rounded-2xl border border-border/70 bg-card px-5 py-3 shadow-sm">
