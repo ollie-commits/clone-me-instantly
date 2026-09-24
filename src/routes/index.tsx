@@ -204,35 +204,67 @@ function Index() {
         </p>
       </header>
 
-      {/* Question funnel: recurring audience questions become one AI twin. */}
+      {/* Question universe: the creator's questions orbit their AI twin. */}
       <section className="mt-12 text-center sm:mt-16">
-        <div className="question-funnel relative mx-auto max-w-xl overflow-hidden rounded-[1.75rem] border border-border/70 bg-card/55 px-3 pb-7 pt-5 sm:px-6 sm:pb-9">
-          <div className="relative z-10 grid grid-cols-2 gap-2.5 sm:gap-3">
-            {AUDIENCE_QUESTIONS.map((question, index) => (
-              <p
+        <div className="question-universe relative mx-auto h-[430px] max-w-xl overflow-hidden rounded-[1.75rem] border border-border/70 sm:h-[500px]">
+          {/* starfield */}
+          <span aria-hidden className="universe-stars absolute inset-0" />
+
+          {/* orbit rings around the twin */}
+          <span
+            aria-hidden
+            className="universe-ring absolute left-1/2 top-1/2 h-40 w-40 -translate-x-1/2 -translate-y-1/2 rounded-full sm:h-48 sm:w-48"
+          />
+          <span
+            aria-hidden
+            className="universe-ring universe-ring--outer absolute left-1/2 top-1/2 h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full sm:h-80 sm:w-80"
+          />
+
+          {/* soft glow behind the twin */}
+          <span
+            aria-hidden
+            className="universe-halo absolute left-1/2 top-1/2 h-44 w-44 -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent/30 blur-3xl sm:h-56 sm:w-56"
+          />
+
+          {/* the twin, small, at the centre of his own universe */}
+          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+            <img
+              src="/images/step-train.png"
+              alt="Dopply AI twin"
+              loading="lazy"
+              width={128}
+              height={128}
+              className="universe-mascot w-24 object-contain drop-shadow-[0_18px_30px_rgba(20,28,11,0.25)] sm:w-28"
+            />
+          </div>
+
+          {/* the questions, floating around him */}
+          {AUDIENCE_QUESTIONS.map((question, index) => {
+            const pos = QUESTION_POSITIONS[index];
+            return (
+              <div
                 key={question}
-                className={`question-bubble rounded-2xl bg-card px-3 py-2.5 text-left text-[11px] font-medium leading-snug text-card-foreground shadow-sm sm:text-xs ${
-                  index % 3 === 1 ? "translate-y-2" : ""
-                }`}
-                style={{ animationDelay: `${index * 120}ms` }}
+                className="absolute w-[7.5rem] sm:w-36"
+                style={{
+                  left: pos.left,
+                  top: pos.top,
+                  transform: `translate(-50%, -50%) scale(${pos.scale})`,
+                }}
               >
-                {question}
-              </p>
-            ))}
-          </div>
-
-          <div aria-hidden className="funnel-neck relative z-0 mx-auto mt-2 h-24 w-44 sm:h-28 sm:w-52" />
-
-          <div className="relative z-10 -mt-5 flex flex-col items-center">
-            <div className="relative flex h-36 w-full max-w-[18rem] items-center justify-center sm:h-44 sm:max-w-sm">
-              <img
-                src={dopplyFunnelAsset.url}
-                alt="Dopply AI twin"
-                loading="lazy"
-                className="relative max-h-full max-w-full object-contain"
-              />
-            </div>
-          </div>
+                <p
+                  className={`question-bubble rounded-2xl bg-card/95 px-3 py-2 text-left text-[10px] font-medium leading-snug text-card-foreground shadow-sm sm:text-[11px] ${
+                    pos.scale < 0.9 ? "opacity-80" : ""
+                  }`}
+                  style={{
+                    animationDelay: `${index * 260}ms`,
+                    animationDuration: pos.duration,
+                  }}
+                >
+                  {question}
+                </p>
+              </div>
+            );
+          })}
         </div>
 
         <h2 className="mx-auto mt-7 max-w-md font-display text-[1.45rem] font-bold leading-tight text-balance sm:text-[1.8rem]">
