@@ -168,7 +168,7 @@ function Index() {
           alt="Meta Tech Provider"
           width={480}
           height={219}
-          className="relative z-20 mx-auto mt-5 w-56 object-contain sm:w-64"
+          className="relative z-20 mx-auto mt-4 w-32 object-contain sm:w-40"
         />
         <div className="relative z-10 mx-auto mt-5 h-36 w-36 sm:h-48 sm:w-48">
           <span
