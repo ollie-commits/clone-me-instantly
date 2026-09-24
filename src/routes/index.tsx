@@ -151,15 +151,16 @@ function Index() {
       {/* ── Hero: opens with the creator, not Dopply ─────────────────── */}
       <header className="text-center">
         {/* Dopply logo, top left */}
-        <div className="flex justify-start">
+        <div className="absolute left-5 top-5 z-50 sm:left-8 sm:top-7">
           <img
             src="/images/dopply-logo.png"
             alt="Dopply"
-            width={96}
-            height={30}
-            className="h-7 w-auto object-contain"
+            width={128}
+            height={40}
+            className="h-9 w-auto object-contain sm:h-10"
           />
         </div>
+        <div className="h-8" />
         {/* Meta badge above the creator: logo on top, text below */}
         <div className="relative z-20 mx-auto mt-5 flex w-fit max-w-full flex-col items-center gap-1.5 rounded-2xl border border-border/70 bg-card px-5 py-3 shadow-sm">
           <svg
@@ -240,7 +241,7 @@ function Index() {
 
           {/* the questions, floating around him */}
           {AUDIENCE_QUESTIONS.map((question, index) => {
-            const pos = QUESTION_POSITIONS[index];
+            const pos = QUESTION_POSITIONS[index % QUESTION_POSITIONS.length]!;
             return (
               <div
                 key={question}
