@@ -279,7 +279,8 @@
   .hero-portrait,
   .hero-glow,
   .typing-dot,
-  .question-bubble {
+  .question-bubble,
+  .universe-mascot {
     animation: none !important;
   }
 }
