@@ -161,14 +161,13 @@ function Index() {
             className="h-7 w-auto object-contain sm:h-8"
           />
         </div>
-        <div className="h-4" />
         {/* Official Meta Tech Provider lockup, no card around it */}
         <img
           src={metaTechProvider.url}
           alt="Meta Tech Provider"
           width={480}
           height={219}
-          className="relative z-20 mx-auto mt-4 w-[5.25rem] object-contain sm:w-[6.75rem]"
+          className="relative z-20 mx-auto mt-1.5 w-[5.25rem] object-contain sm:w-[6.75rem]"
         />
         <div className="relative z-10 mx-auto mt-5 h-36 w-36 sm:h-48 sm:w-48">
           <span
