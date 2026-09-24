@@ -150,8 +150,8 @@ function Index() {
       <div aria-hidden className="page-frame pointer-events-none fixed inset-0 z-50" />
       {/* ── Hero: opens with the creator, not Dopply ─────────────────── */}
       <header className="text-center">
-        {/* Dopply logo, top left */}
-        <div className="absolute left-5 top-5 z-50 sm:left-8 sm:top-7">
+        {/* Dopply logo, top centre */}
+        <div className="flex justify-center">
           <img
             src="/images/dopply-logo.png"
             alt="Dopply"
@@ -160,7 +160,7 @@ function Index() {
             className="h-7 w-auto object-contain sm:h-8"
           />
         </div>
-        <div className="h-8" />
+        <div className="h-4" />
         {/* Meta badge above the creator: logo on top, text below */}
         <div className="relative z-20 mx-auto mt-5 flex w-fit max-w-full flex-col items-center gap-1.5 rounded-2xl border border-border/70 bg-card px-5 py-3 shadow-sm">
           <svg
