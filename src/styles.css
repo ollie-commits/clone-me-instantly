@@ -47,8 +47,8 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-  --font-display: "Poppins", "Avenir Next", sans-serif;
-  --font-sans: "DM Sans", "Helvetica Neue", sans-serif;
+  --font-display: "Bricolage Grotesque", "Avenir Next", sans-serif;
+  --font-sans: "Bricolage Grotesque", "Helvetica Neue", sans-serif;
 }
 
 :root {
