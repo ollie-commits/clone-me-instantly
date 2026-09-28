@@ -323,13 +323,16 @@ function Index() {
 
         <StepCarousel3D steps={STEPS} />
 
-        {/* App Store badge under the carousel */}
+      </section>
+
+      {/* App Store badge between the carousel section and the footer */}
+      <div className="mt-8 text-center">
         <a
           href="https://apps.apple.com/gb/app/dopply/id6775535561"
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Download Dopply on the App Store"
-          className="mt-7 inline-block transition-transform active:scale-95"
+          className="inline-block transition-transform active:scale-95"
         >
           <img
             src={appStoreBadge.url}
@@ -339,7 +342,7 @@ function Index() {
             className="w-[13.33rem] object-contain sm:w-64"
           />
         </a>
-      </section>
+      </div>
 
       {/* ── Footer ───────────────────────────────────────────────────── */}
       <footer className="mt-12 pb-10 text-center">
