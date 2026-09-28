@@ -203,7 +203,7 @@ function Index() {
               alt="Download on the App Store"
               width={336}
               height={130}
-              className="w-[13.33rem] object-contain sm:w-64"
+              className="w-60 object-contain sm:w-72"
             />
           </a>
           {/* Hand-drawn green arrow + mascot + caption, all bouncing in tandem */}
@@ -380,7 +380,7 @@ function Index() {
             alt="Download on the App Store"
             width={336}
             height={130}
-            className="w-[13.33rem] object-contain sm:w-64"
+            className="w-60 object-contain sm:w-72"
           />
         </a>
       </div>
