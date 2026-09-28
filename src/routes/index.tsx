@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import { StepCarousel3D } from "../components/StepCarousel3D";
 import metaTechProvider from "../assets/meta-tech-provider.png.asset.json";
+import twoOfYouVideo from "../assets/dopply-two-of-you.mp4.asset.json";
 
 /* ==================================================================
    CREATOR DATA — swap block.
@@ -33,17 +34,7 @@ const creator = {
 
 const CREATOR_PHOTO = "/images/creator.jpg";
 
-/* QUESTION-START: swap these prompts with each creator's recurring questions. */
-const AUDIENCE_QUESTIONS = [
-  "Is now actually a good time to buy?",
-  "How much deposit do I really need?",
-  "Should I buy before I sell?",
-  "Fixed rate or tracker mortgage?",
-  "What should I look for at a viewing?",
-  "How do I know if I'm overpaying?",
-  "Is a new build worth it?",
-  "What costs do first-time buyers forget?",
-];
+/* QUESTION-START: swap with each creator's questions and replies. */
 
 /* The two Q&As shown in the WhatsApp screenshot mock. Kept in the swap
    block so per-creator questions and replies can be replaced too. */
