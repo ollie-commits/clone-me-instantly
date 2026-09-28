@@ -178,18 +178,12 @@ function Index() {
         </p>
       </header>
 
-      {/* Intro video: "Now there are two of you." Autoplay muted with
-          controls so the narration can be switched on. */}
+      {/* Intro video: "Now there are two of you." Autoplays muted (browser
+          rule); viewer taps for sound and can pause via the controls. */}
       <section className="mt-9 text-center sm:mt-12">
-        <video
+        <IntroVideo
           src={twoOfYouVideo.url}
-          className="mx-auto w-full max-w-xl rounded-[1.75rem] border border-border/70 shadow-[0_28px_70px_-32px_rgba(20,28,11,0.5)]"
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="metadata"
-          aria-label="Dopply video: now there are two of you"
+          label="Dopply video: now there are two of you"
         />
 
 
