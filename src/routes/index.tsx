@@ -253,59 +253,59 @@ function Index() {
 
         {/* Q&A panel: reads as its own page, cut off just below the logos */}
         <div className="mt-12 rounded-[2.5rem] border border-panel-border bg-panel px-5 pb-9 pt-7 shadow-[0_24px_50px_-30px_rgba(34,73,31,0.45)] sm:mt-16 sm:px-8 sm:pb-11 sm:pt-9">
-          <h2 className="mx-auto max-w-md font-display text-[1.45rem] font-semibold leading-tight text-balance sm:text-[1.8rem]">
-          How do you answer all of these questions without burning out?
-        </h2>
+            <h2 className="mx-auto max-w-md font-display text-[1.45rem] font-semibold leading-tight text-balance sm:text-[1.8rem]">
+            How do you answer all of these questions without burning out?
+          </h2>
 
-        <p className="mx-auto mt-6 max-w-xs font-display text-lg font-semibold leading-snug text-foreground sm:text-xl">
-          Your AI twin can reply to all of these.
-        </p>
+          <p className="mx-auto mt-6 max-w-xs font-display text-lg font-semibold leading-snug text-foreground sm:text-xl">
+            Your AI twin can reply to all of these.
+          </p>
 
-        {/* WhatsApp screenshot mock — colours are WhatsApp's own brand UI,
-            intentionally not theme tokens. */}
-        <div className="mx-auto mt-5 max-w-sm overflow-hidden rounded-[1.4rem] border border-border/80 text-left shadow-[0_28px_70px_-32px_rgba(20,28,11,0.5)]">
-          {/* status bar */}
-          <div className="flex items-center justify-between bg-[#f7f4ef] px-5 pb-1 pt-2 text-[11px] font-semibold text-[#1d1d1f]">
-            <span>16:48</span>
-            <span className="flex items-center gap-1">
-              <Signal className="h-3 w-3" />
-              <Wifi className="h-3 w-3" />
-              <BatteryFull className="h-3.5 w-3.5" />
-            </span>
-          </div>
-          {/* chat header with the creator's photo and name */}
-          <div className="flex items-center gap-2.5 border-b border-[#e4ded3] bg-[#f7f4ef] px-3 pb-2.5">
-            <ChevronLeft className="h-5 w-5 shrink-0 text-[#1d1d1f]" />
-            <img
-              src={CREATOR_PHOTO}
-              alt={`@${creator.handle}`}
-              className="h-8 w-8 rounded-full object-cover"
-            />
-            <div className="min-w-0 flex-1 leading-tight">
-              <p className="truncate text-[13px] font-semibold text-[#1d1d1f]">
-                {creator.firstName}
-              </p>
-              <p className="text-[10px] text-[#667781]">online</p>
+          {/* WhatsApp screenshot mock — colours are WhatsApp's own brand UI,
+              intentionally not theme tokens. */}
+          <div className="mx-auto mt-5 max-w-sm overflow-hidden rounded-[1.4rem] border border-border/80 text-left shadow-[0_28px_70px_-32px_rgba(20,28,11,0.5)]">
+            {/* status bar */}
+            <div className="flex items-center justify-between bg-[#f7f4ef] px-5 pb-1 pt-2 text-[11px] font-semibold text-[#1d1d1f]">
+              <span>16:48</span>
+              <span className="flex items-center gap-1">
+                <Signal className="h-3 w-3" />
+                <Wifi className="h-3 w-3" />
+                <BatteryFull className="h-3.5 w-3.5" />
+              </span>
             </div>
-            <Video className="h-[18px] w-[18px] shrink-0 text-[#1d1d1f]" />
-            <Phone className="h-4 w-4 shrink-0 text-[#1d1d1f]" />
-          </div>
-          {/* chat body */}
-          <div className="wa-wallpaper space-y-2 px-3 py-4">
-            <p className="mx-auto w-fit rounded-md bg-white/85 px-2.5 py-0.5 text-[10px] font-medium text-[#54656f] shadow-sm">
-              Today
-            </p>
-            {WHATSAPP_CHAT.map((pair, index) => (
-              <div key={pair.question}>
-                <div className="flex justify-start">
-                  <div className="wa-bubble max-w-[82%] rounded-[10px] rounded-tl-[3px] bg-white px-2.5 pb-1 pt-1.5 shadow-sm">
-                    <p className="text-[12.5px] leading-snug text-[#111b21]">
-                      {pair.question}
-                    </p>
-                    <p className="mt-0.5 text-right text-[9px] text-[#667781]">
-                      13:4{index + 1}
-                    </p>
-                  </div>
+            {/* chat header with the creator's photo and name */}
+            <div className="flex items-center gap-2.5 border-b border-[#e4ded3] bg-[#f7f4ef] px-3 pb-2.5">
+              <ChevronLeft className="h-5 w-5 shrink-0 text-[#1d1d1f]" />
+              <img
+                src={CREATOR_PHOTO}
+                alt={`@${creator.handle}`}
+                className="h-8 w-8 rounded-full object-cover"
+              />
+              <div className="min-w-0 flex-1 leading-tight">
+                <p className="truncate text-[13px] font-semibold text-[#1d1d1f]">
+                  {creator.firstName}
+                </p>
+                <p className="text-[10px] text-[#667781]">online</p>
+              </div>
+              <Video className="h-[18px] w-[18px] shrink-0 text-[#1d1d1f]" />
+              <Phone className="h-4 w-4 shrink-0 text-[#1d1d1f]" />
+            </div>
+            {/* chat body */}
+            <div className="wa-wallpaper space-y-2 px-3 py-4">
+              <p className="mx-auto w-fit rounded-md bg-white/85 px-2.5 py-0.5 text-[10px] font-medium text-[#54656f] shadow-sm">
+                Today
+              </p>
+              {WHATSAPP_CHAT.map((pair, index) => (
+                <div key={pair.question}>
+                  <div className="flex justify-start">
+                    <div className="wa-bubble max-w-[82%] rounded-[10px] rounded-tl-[3px] bg-white px-2.5 pb-1 pt-1.5 shadow-sm">
+                      <p className="text-[12.5px] leading-snug text-[#111b21]">
+                        {pair.question}
+                      </p>
+                      <p className="mt-0.5 text-right text-[9px] text-[#667781]">
+                        13:4{index + 1}
+                      </p>
+                    </div>
                 </div>
                 <div className="mt-2 flex justify-end">
                   <div className="wa-bubble max-w-[82%] rounded-[10px] rounded-tr-[3px] bg-[#d9fdd3] px-2.5 pb-1 pt-1.5 shadow-sm">
