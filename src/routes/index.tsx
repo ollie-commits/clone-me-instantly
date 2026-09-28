@@ -206,7 +206,7 @@ function Index() {
               className="w-[13.33rem] object-contain sm:w-64"
             />
           </a>
-          {/* Hand-drawn green arrow pointing up at the badge, caption below */}
+          {/* Hand-drawn green arrow pointing up at the badge */}
           <svg
             aria-hidden
             viewBox="0 0 36 44"
@@ -221,17 +221,28 @@ function Index() {
             <path d="M9 17 C 12 14, 15 11.5, 17 9" />
             <path d="M18.5 16.5 C 18 13, 17.5 10.5, 17 8.5" />
           </svg>
-          <div className="mt-1 flex items-end justify-center gap-2 pl-8 sm:pl-12">
-            <p className="font-display text-sm font-semibold text-accent sm:text-base">
-              It's free to set up and launch!
-            </p>
+          {/* Mascot speaking the caption through a speech bubble */}
+          <div className="mt-1 flex flex-col items-center">
+            <div className="relative z-10">
+              <p className="whitespace-nowrap rounded-[1.1rem] bg-card px-3.5 py-2 font-display text-[13px] font-semibold leading-none text-accent shadow-[0_3px_14px_rgba(34,73,31,0.14)] sm:text-sm">
+                It's free to set up and launch!
+              </p>
+              <svg
+                aria-hidden
+                viewBox="0 0 20 18"
+                className="absolute -bottom-[10px] right-[3.25rem] h-[12px] w-4 text-card"
+                fill="currentColor"
+              >
+                <path d="M0 0 H16 C 15 6, 11 11, 3 17 C 7.5 11, 6.5 5, 0 0 Z" />
+              </svg>
+            </div>
             <img
               src="/images/mascot-cash.png"
               alt="Dopply mascot collecting payouts from an ATM"
               width={700}
               height={312}
               loading="lazy"
-              className="h-14 w-auto object-contain sm:h-16"
+              className="-mt-1.5 h-14 w-auto object-contain sm:h-16"
             />
           </div>
         </div>
