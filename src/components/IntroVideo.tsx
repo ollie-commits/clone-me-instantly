@@ -3,8 +3,9 @@ import { Volume2, VolumeX } from "lucide-react";
 
 /**
  * Intro video that tries to autoplay WITH sound. If the browser blocks
- * unmuted autoplay (common on mobile), it silently falls back to muted
- * and shows the "Tap for sound" button.
+ * unmuted autoplay (common on mobile), it falls back to muted and turns
+ * the sound on at the visitor's very first tap anywhere on the page.
+ * The "Tap for sound" button remains as a manual toggle.
  */
 export function IntroVideo({ src, label }: { src: string; label: string }) {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -13,14 +14,26 @@ export function IntroVideo({ src, label }: { src: string; label: string }) {
   useEffect(() => {
     const video = videoRef.current;
     if (!video) return;
+
     // Try to play with sound first.
     video.play().catch(() => {
-      // Browser refused unmuted autoplay: restart muted.
+      // Browser refused unmuted autoplay: restart muted, then unmute on
+      // the visitor's first interaction anywhere on the page.
       video.muted = true;
       setMuted(true);
       video.play().catch(() => {
         // Even muted autoplay was blocked; the viewer can press play.
       });
+
+      const unmuteOnFirstTouch = () => {
+        video.muted = false;
+        setMuted(false);
+        video.play().catch(() => {});
+      };
+      window.addEventListener("pointerdown", unmuteOnFirstTouch, {
+        once: true,
+      });
+      window.addEventListener("keydown", unmuteOnFirstTouch, { once: true });
     });
   }, []);
 
