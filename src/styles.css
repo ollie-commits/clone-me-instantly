@@ -225,9 +225,7 @@
 @media (prefers-reduced-motion: reduce) {
   .hero-portrait,
   .hero-glow,
-  .typing-dot,
-  .question-bubble,
-  .universe-mascot {
+  .typing-dot {
     animation: none !important;
   }
 }
