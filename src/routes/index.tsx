@@ -230,7 +230,7 @@ function Index() {
               <svg
                 aria-hidden
                 viewBox="0 0 20 18"
-                className="absolute -bottom-[10px] right-7 h-[12px] w-4 text-card"
+                className="absolute -bottom-[10px] right-[3.25rem] h-[12px] w-4 text-card"
                 fill="currentColor"
               >
                 <path d="M0 0 H16 C 15 6, 11 11, 3 17 C 7.5 11, 6.5 5, 0 0 Z" />
