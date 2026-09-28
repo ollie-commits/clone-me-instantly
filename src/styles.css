@@ -8,7 +8,7 @@
  * Design system — "Field notes" green (from client reference screenshot).
  *
  * Pale sage background, deep forest-green ink in a heavy geometric sans
- * (Poppins display), quiet DM Sans body, white rounded cards, one
+ * (Bricolage Grotesque everywhere), white rounded cards, one
  * near-black ink panel, sage chip tint.
  *
  * Per-creator theming: override --accent (and --accent-foreground) on
@@ -47,8 +47,8 @@
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-  --font-display: "Poppins", "Avenir Next", sans-serif;
-  --font-sans: "DM Sans", "Helvetica Neue", sans-serif;
+  --font-display: "Bricolage Grotesque", "Avenir Next", sans-serif;
+  --font-sans: "Bricolage Grotesque", "Helvetica Neue", sans-serif;
 }
 
 :root {
