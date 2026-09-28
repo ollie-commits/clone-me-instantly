@@ -12,7 +12,7 @@ import {
 import { StepCarousel3D } from "../components/StepCarousel3D";
 import { IntroVideo } from "../components/IntroVideo";
 import metaTechProvider from "../assets/meta-tech-provider.png.asset.json";
-import twoOfYouVideo from "../assets/dopply-two-of-you.mp4.asset.json";
+import paperFilmVideo from "../assets/dopply-paper-film.mp4.asset.json";
 import appStoreBadge from "../assets/app-store-badge.png.asset.json";
 
 /* ==================================================================
@@ -174,7 +174,7 @@ function Index() {
 
         {/* Intro video sits above the fold, right under the headline */}
         <div className="mt-5 sm:mt-6">
-          <IntroVideo src={twoOfYouVideo.url} label="Dopply video: now there are two of you" />
+          <IntroVideo src={paperFilmVideo.url} label="Dopply film" />
         </div>
 
         <p className="mx-auto mt-5 max-w-md font-display text-lg font-semibold leading-snug tracking-[-0.01em] text-foreground/80 text-balance sm:text-[1.35rem]">
