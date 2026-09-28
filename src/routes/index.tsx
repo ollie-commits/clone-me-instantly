@@ -10,6 +10,7 @@ import {
   Wifi,
 } from "lucide-react";
 import { StepCarousel3D } from "../components/StepCarousel3D";
+import { IntroVideo } from "../components/IntroVideo";
 import metaTechProvider from "../assets/meta-tech-provider.png.asset.json";
 import twoOfYouVideo from "../assets/dopply-two-of-you.mp4.asset.json";
 
