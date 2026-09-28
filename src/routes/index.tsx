@@ -180,16 +180,18 @@ function Index() {
 
       {/* Intro video: "Now there are two of you." Autoplay muted with
           controls so the narration can be switched on. */}
-      <video
-        src={twoOfYouVideo.url}
-        className="mx-auto mt-9 w-full max-w-xl rounded-[1.75rem] border border-border/70 shadow-[0_28px_70px_-32px_rgba(20,28,11,0.5)]"
-        autoPlay
-        muted
-        loop
-        playsInline
-        preload="metadata"
-        aria-label="Dopply video: now there are two of you"
-      />
+      <section className="mt-9 text-center sm:mt-12">
+        <video
+          src={twoOfYouVideo.url}
+          className="mx-auto w-full max-w-xl rounded-[1.75rem] border border-border/70 shadow-[0_28px_70px_-32px_rgba(20,28,11,0.5)]"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          aria-label="Dopply video: now there are two of you"
+        />
+
 
 
         <h2 className="mx-auto mt-7 max-w-md font-display text-[1.45rem] font-bold leading-tight text-balance sm:text-[1.8rem]">
