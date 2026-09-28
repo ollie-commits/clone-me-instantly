@@ -175,7 +175,16 @@ function Index() {
         <h1 className="mt-3 font-display text-[1.9rem] font-bold leading-[1.12] tracking-[-0.02em] text-balance sm:text-[2.6rem]">
           <Headline text={creator.headline} name={creator.firstName} />
         </h1>
-        <p className="mx-auto mt-3 max-w-md font-display text-lg font-semibold leading-snug tracking-[-0.01em] text-foreground/80 text-balance sm:text-[1.35rem]">
+
+        {/* Intro video sits above the fold, right under the headline */}
+        <div className="mt-5 sm:mt-6">
+          <IntroVideo
+            src={twoOfYouVideo.url}
+            label="Dopply video: now there are two of you"
+          />
+        </div>
+
+        <p className="mx-auto mt-5 max-w-md font-display text-lg font-semibold leading-snug tracking-[-0.01em] text-foreground/80 text-balance sm:text-[1.35rem]">
           {creator.subheadline}
         </p>
       </header>
