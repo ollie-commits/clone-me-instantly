@@ -79,18 +79,6 @@ const STEPS = [
   },
 ];
 
-/* Decorative placement for the floating question bubbles (left, top,
-   depth scale, drift duration). Not part of the per-creator swap. */
-const QUESTION_POSITIONS = [
-  { left: "29%", top: "12%", scale: 1, duration: "5.2s" },
-  { left: "72%", top: "17%", scale: 0.88, duration: "6.4s" },
-  { left: "18%", top: "32%", scale: 0.9, duration: "5.8s" },
-  { left: "78%", top: "35%", scale: 1, duration: "6.9s" },
-  { left: "23%", top: "56%", scale: 0.92, duration: "5.5s" },
-  { left: "77%", top: "60%", scale: 0.85, duration: "6.1s" },
-  { left: "31%", top: "79%", scale: 1, duration: "6.6s" },
-  { left: "70%", top: "85%", scale: 0.88, duration: "5.9s" },
-];
 
 
 
