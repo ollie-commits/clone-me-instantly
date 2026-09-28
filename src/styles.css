@@ -38,6 +38,8 @@
   --color-accent: var(--accent);
   --color-accent-foreground: var(--accent-foreground);
   --color-accent-soft: var(--accent-soft);
+  --color-panel: var(--panel);
+  --color-panel-border: var(--panel-border);
   --color-ink: var(--ink);
   --color-ink-foreground: var(--ink-foreground);
   --color-destructive: var(--destructive);
@@ -56,6 +58,10 @@
   --accent: #4a7c2f;
   --accent-foreground: #ffffff;
   --accent-soft: #cfe0ba;
+
+  /* Q&A panel: a page-within-the-page, one step off the background */
+  --panel: #e9f0dd;
+  --panel-border: #d2dfbe;
 
   --background: #dfe9d0;
   --foreground: #33491f;
@@ -82,6 +88,8 @@
   --accent: #4a7c2f;
   --accent-foreground: #ffffff;
   --accent-soft: color-mix(in oklab, var(--accent) 22%, black);
+  --panel: #202b16;
+  --panel-border: #ffffff1a;
 
   --background: #17200f;
   --foreground: #eef2e4;
