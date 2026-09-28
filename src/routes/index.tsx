@@ -127,7 +127,7 @@ function Headline({ text, name }: { text: string; name: string }) {
 
 function Index() {
   return (
-    <main className="mx-auto min-h-screen max-w-2xl px-7 pt-9 sm:px-10 sm:pt-14">
+    <main className="mx-auto min-h-screen max-w-2xl px-7 pt-6 sm:px-10 sm:pt-12">
       {/* Gradient frame hugging the page edges */}
       <div aria-hidden className="page-frame pointer-events-none fixed inset-0 z-50" />
       {/* ── Hero: opens with the creator, not Dopply ─────────────────── */}
@@ -139,7 +139,7 @@ function Index() {
             alt="Dopply"
             width={96}
             height={30}
-            className="h-7 w-auto object-contain sm:h-8"
+            className="h-10 w-auto object-contain sm:h-12"
           />
         </div>
         {/* Official Meta Tech Provider lockup, no card around it */}
@@ -148,9 +148,9 @@ function Index() {
           alt="Meta Tech Provider"
           width={480}
           height={219}
-          className="relative z-20 mx-auto mt-1.5 w-[5.25rem] object-contain sm:w-[6.75rem]"
+          className="relative z-20 mx-auto mt-2 w-[5.25rem] object-contain sm:w-[6.75rem]"
         />
-        <div className="relative z-10 mx-auto mt-5 h-36 w-36 sm:h-48 sm:w-48">
+        <div className="relative z-10 mx-auto mt-4 h-28 w-28 sm:h-40 sm:w-40">
           <span
             aria-hidden
             className="hero-glow absolute inset-0 rounded-full bg-accent blur-3xl"
@@ -165,24 +165,24 @@ function Index() {
             alt={`@${creator.handle}`}
             width={192}
             height={192}
-            className="hero-portrait relative h-36 w-36 rounded-full object-cover shadow-[0_20px_50px_-20px_var(--accent)] ring-4 ring-card sm:h-48 sm:w-48"
+            className="hero-portrait relative h-28 w-28 rounded-full object-cover shadow-[0_20px_50px_-20px_var(--accent)] ring-4 ring-card sm:h-40 sm:w-40"
           />
         </div>
-        <p className="mt-5 inline-flex items-center gap-1.5 text-[13px] text-muted-foreground">
+        <p className="mt-3.5 inline-flex items-center gap-1.5 text-[13px] text-muted-foreground">
           <AtSign className="h-3.5 w-3.5" />
           {creator.handle}
         </p>
         <h1 className="mt-3 font-display text-[1.9rem] font-bold leading-[1.12] tracking-[-0.02em] text-balance sm:text-[2.6rem]">
           <Headline text={creator.headline} name={creator.firstName} />
         </h1>
-        <p className="mx-auto mt-4 max-w-md font-display text-lg font-semibold leading-snug tracking-[-0.01em] text-foreground/80 text-balance sm:text-[1.35rem]">
+        <p className="mx-auto mt-3 max-w-md font-display text-lg font-semibold leading-snug tracking-[-0.01em] text-foreground/80 text-balance sm:text-[1.35rem]">
           {creator.subheadline}
         </p>
       </header>
 
       {/* Intro video: "Now there are two of you." Autoplays muted (browser
           rule); viewer taps for sound and can pause via the controls. */}
-      <section className="mt-9 text-center sm:mt-12">
+      <section className="mt-7 text-center sm:mt-12">
         <IntroVideo
           src={twoOfYouVideo.url}
           label="Dopply video: now there are two of you"
@@ -203,7 +203,7 @@ function Index() {
               alt="Download on the App Store"
               width={336}
               height={130}
-              className="w-[13.33rem] object-contain sm:w-64"
+              className="w-60 object-contain sm:w-72"
             />
           </a>
           {/* Hand-drawn green arrow + mascot + caption, all bouncing in tandem */}
@@ -249,11 +249,11 @@ function Index() {
 
 
 
-        <h2 className="mx-auto mt-7 max-w-md font-display text-[1.45rem] font-bold leading-tight text-balance sm:text-[1.8rem]">
+        <h2 className="mx-auto mt-12 max-w-md font-display text-[1.45rem] font-semibold leading-tight text-balance sm:mt-16 sm:text-[1.8rem]">
           How do you answer all of these questions without burning out?
         </h2>
 
-        <p className="mx-auto mt-4 max-w-xs font-display text-lg font-bold leading-snug text-foreground sm:text-xl">
+        <p className="mx-auto mt-6 max-w-xs font-display text-lg font-semibold leading-snug text-foreground sm:text-xl">
           Your AI twin can reply to all of these.
         </p>
 
@@ -320,10 +320,10 @@ function Index() {
         </div>
 
         {/* Official WhatsApp + Telegram glyphs — brand colours, like the mock above. */}
-        <p className="mx-auto mt-6 max-w-xs font-display text-base font-bold leading-snug text-balance sm:text-lg">
+        <p className="mx-auto mt-10 max-w-xs font-display text-base font-semibold leading-snug text-balance sm:mt-12 sm:text-lg">
           Deploy your AI twin to WhatsApp, Telegram or as a web interface.
         </p>
-        <div className="mt-4 flex items-center justify-center gap-4">
+        <div className="mt-6 flex items-center justify-center gap-4">
           <svg
             aria-label="WhatsApp"
             role="img"
@@ -380,7 +380,7 @@ function Index() {
             alt="Download on the App Store"
             width={336}
             height={130}
-            className="w-[13.33rem] object-contain sm:w-64"
+            className="w-60 object-contain sm:w-72"
           />
         </a>
       </div>
