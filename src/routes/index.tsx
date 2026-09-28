@@ -13,6 +13,7 @@ import { StepCarousel3D } from "../components/StepCarousel3D";
 import { IntroVideo } from "../components/IntroVideo";
 import metaTechProvider from "../assets/meta-tech-provider.png.asset.json";
 import twoOfYouVideo from "../assets/dopply-two-of-you.mp4.asset.json";
+import appStoreBadge from "../assets/app-store-badge.png.asset.json";
 
 /* ==================================================================
    CREATOR DATA — swap block.
@@ -186,6 +187,24 @@ function Index() {
           src={twoOfYouVideo.url}
           label="Dopply video: now there are two of you"
         />
+
+        {/* App Store badge — half the video's width on mobile, centred */}
+        <a
+          href="https://apps.apple.com/gb/app/dopply/id6775535561"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Download Dopply on the App Store"
+          className="mt-5 inline-block transition-transform active:scale-95"
+        >
+          <img
+            src={appStoreBadge.url}
+            alt="Download on the App Store"
+            width={336}
+            height={130}
+            className="w-40 object-contain sm:w-48"
+          />
+        </a>
+
 
 
 
