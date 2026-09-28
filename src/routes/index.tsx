@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import { StepCarousel3D } from "../components/StepCarousel3D";
 import metaTechProvider from "../assets/meta-tech-provider.png.asset.json";
+import twoOfYouVideo from "../assets/dopply-two-of-you.mp4.asset.json";
 
 /* ==================================================================
    CREATOR DATA — swap block.
@@ -33,17 +34,7 @@ const creator = {
 
 const CREATOR_PHOTO = "/images/creator.jpg";
 
-/* QUESTION-START: swap these prompts with each creator's recurring questions. */
-const AUDIENCE_QUESTIONS = [
-  "Is now actually a good time to buy?",
-  "How much deposit do I really need?",
-  "Should I buy before I sell?",
-  "Fixed rate or tracker mortgage?",
-  "What should I look for at a viewing?",
-  "How do I know if I'm overpaying?",
-  "Is a new build worth it?",
-  "What costs do first-time buyers forget?",
-];
+/* QUESTION-START: swap with each creator's questions and replies. */
 
 /* The two Q&As shown in the WhatsApp screenshot mock. Kept in the swap
    block so per-creator questions and replies can be replaced too. */
@@ -88,18 +79,6 @@ const STEPS = [
   },
 ];
 
-/* Decorative placement for the floating question bubbles (left, top,
-   depth scale, drift duration). Not part of the per-creator swap. */
-const QUESTION_POSITIONS = [
-  { left: "29%", top: "12%", scale: 1, duration: "5.2s" },
-  { left: "72%", top: "17%", scale: 0.88, duration: "6.4s" },
-  { left: "18%", top: "32%", scale: 0.9, duration: "5.8s" },
-  { left: "78%", top: "35%", scale: 1, duration: "6.9s" },
-  { left: "23%", top: "56%", scale: 0.92, duration: "5.5s" },
-  { left: "77%", top: "60%", scale: 0.85, duration: "6.1s" },
-  { left: "31%", top: "79%", scale: 1, duration: "6.6s" },
-  { left: "70%", top: "85%", scale: 0.88, duration: "5.9s" },
-];
 
 
 
@@ -199,68 +178,21 @@ function Index() {
         </p>
       </header>
 
-      {/* Question universe: the creator's questions orbit their AI twin. */}
-      <section className="mt-12 text-center sm:mt-16">
-        <div className="question-universe relative mx-auto h-[430px] max-w-xl overflow-hidden rounded-[1.75rem] border border-border/70 sm:h-[500px]">
-          {/* starfield */}
-          <span aria-hidden className="universe-stars absolute inset-0" />
+      {/* Intro video: "Now there are two of you." Autoplay muted with
+          controls so the narration can be switched on. */}
+      <section className="mt-9 text-center sm:mt-12">
+        <video
+          src={twoOfYouVideo.url}
+          className="mx-auto w-full max-w-xl rounded-[1.75rem] border border-border/70 shadow-[0_28px_70px_-32px_rgba(20,28,11,0.5)]"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          aria-label="Dopply video: now there are two of you"
+        />
 
-          {/* orbit rings around the twin */}
-          <span
-            aria-hidden
-            className="universe-ring absolute left-1/2 top-1/2 h-40 w-40 -translate-x-1/2 -translate-y-1/2 rounded-full sm:h-48 sm:w-48"
-          />
-          <span
-            aria-hidden
-            className="universe-ring universe-ring--outer absolute left-1/2 top-1/2 h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full sm:h-80 sm:w-80"
-          />
 
-          {/* soft glow behind the twin */}
-          <span
-            aria-hidden
-            className="universe-halo absolute left-1/2 top-1/2 h-44 w-44 -translate-x-1/2 -translate-y-1/2 rounded-full bg-accent/30 blur-3xl sm:h-56 sm:w-56"
-          />
-
-          {/* the twin, small, at the centre of his own universe */}
-          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-            <img
-              src="/images/step-train.png"
-              alt="Dopply AI twin"
-              loading="lazy"
-              width={128}
-              height={128}
-              className="universe-mascot w-24 object-contain drop-shadow-[0_18px_30px_rgba(20,28,11,0.25)] sm:w-28"
-            />
-          </div>
-
-          {/* the questions, floating around him */}
-          {AUDIENCE_QUESTIONS.map((question, index) => {
-            const pos = QUESTION_POSITIONS[index % QUESTION_POSITIONS.length]!;
-            return (
-              <div
-                key={question}
-                className="absolute w-[7.5rem] sm:w-36"
-                style={{
-                  left: pos.left,
-                  top: pos.top,
-                  transform: `translate(-50%, -50%) scale(${pos.scale})`,
-                }}
-              >
-                <p
-                  className={`question-bubble rounded-2xl bg-card/95 px-3 py-2 text-left text-[10px] font-medium leading-snug text-card-foreground shadow-sm sm:text-[11px] ${
-                    pos.scale < 0.9 ? "opacity-80" : ""
-                  }`}
-                  style={{
-                    animationDelay: `${index * 260}ms`,
-                    animationDuration: pos.duration,
-                  }}
-                >
-                  {question}
-                </p>
-              </div>
-            );
-          })}
-        </div>
 
         <h2 className="mx-auto mt-7 max-w-md font-display text-[1.45rem] font-bold leading-tight text-balance sm:text-[1.8rem]">
           How do you answer all of these questions without burning out?
