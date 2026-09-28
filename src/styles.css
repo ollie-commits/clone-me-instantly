@@ -237,9 +237,17 @@
 }
 .bounce-tandem { animation: dopply-bounce-tandem 1.8s ease-in-out infinite; }
 
+/* App Store badge: a barely-there breathing pulse. */
+@keyframes dopply-badge-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.025); }
+}
+.badge-pulse { animation: dopply-badge-pulse 2.4s ease-in-out infinite; }
+
 @keyframes swipe-nudge { 0%,100% { transform: translateX(0); } 50% { transform: translateX(5px); } }
 .swipe-nudge { animation: swipe-nudge 1.4s ease-in-out infinite; }
 @media (prefers-reduced-motion: reduce) {
   .swipe-nudge,
-  .bounce-tandem { animation: none; }
+  .bounce-tandem,
+  .badge-pulse { animation: none; }
 }
