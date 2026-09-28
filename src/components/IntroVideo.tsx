@@ -1,14 +1,28 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Volume2, VolumeX } from "lucide-react";
 
 /**
- * Intro video with sound toggle + native controls (pause/play).
- * Browsers only allow autoplay when muted, so it starts silent and
- * the viewer taps to turn the narration on.
+ * Intro video that tries to autoplay WITH sound. If the browser blocks
+ * unmuted autoplay (common on mobile), it silently falls back to muted
+ * and shows the "Tap for sound" button.
  */
 export function IntroVideo({ src, label }: { src: string; label: string }) {
   const videoRef = useRef<HTMLVideoElement>(null);
-  const [muted, setMuted] = useState(true);
+  const [muted, setMuted] = useState(false);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+    // Try to play with sound first.
+    video.play().catch(() => {
+      // Browser refused unmuted autoplay: restart muted.
+      video.muted = true;
+      setMuted(true);
+      video.play().catch(() => {
+        // Even muted autoplay was blocked; the viewer can press play.
+      });
+    });
+  }, []);
 
   const toggleSound = () => {
     const video = videoRef.current;
@@ -24,7 +38,6 @@ export function IntroVideo({ src, label }: { src: string; label: string }) {
         src={src}
         className="w-full rounded-[1.75rem] border border-border/70 shadow-[0_28px_70px_-32px_rgba(20,28,11,0.5)]"
         autoPlay
-        muted
         loop
         playsInline
         controls
@@ -38,7 +51,7 @@ export function IntroVideo({ src, label }: { src: string; label: string }) {
         aria-label={muted ? "Turn sound on" : "Turn sound off"}
       >
         {muted ? <VolumeX className="h-4 w-4" /> : <Volume2 className="h-4 w-4" />}
-        {muted ? "Tap for sound" : "Sound on"}
+        {muted ? "Tap for sound" : "Tap to mute"}
       </button>
     </div>
   );
