@@ -201,7 +201,7 @@ function Index() {
             alt="Download on the App Store"
             width={336}
             height={130}
-            className="w-40 object-contain sm:w-48"
+            className="w-[13.33rem] object-contain sm:w-64"
           />
         </a>
 
