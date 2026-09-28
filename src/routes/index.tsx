@@ -29,8 +29,7 @@ const creator = {
   nicheSummary: "First-time buyer tips & no-BS real estate advice",
   toneNotes: "warm, direct, funny",
   headline: "Sofia, your followers ask you questions every week.",
-  subheadline:
-    "We build AI twins that answer these questions for you in your exact tone of voice.",
+  subheadline: "We build AI twins that answer these questions for you in your exact tone of voice.",
 };
 // DATA-END
 
@@ -80,9 +79,6 @@ const STEPS = [
     body: "Earnings land automatically while you keep creating. Your audience has access to your knowledge 24/7.",
   },
 ];
-
-
-
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -178,10 +174,7 @@ function Index() {
 
         {/* Intro video sits above the fold, right under the headline */}
         <div className="mt-5 sm:mt-6">
-          <IntroVideo
-            src={twoOfYouVideo.url}
-            label="Dopply video: now there are two of you"
-          />
+          <IntroVideo src={twoOfYouVideo.url} label="Dopply video: now there are two of you" />
         </div>
 
         <p className="mx-auto mt-5 max-w-md font-display text-lg font-semibold leading-snug tracking-[-0.01em] text-foreground/80 text-balance sm:text-[1.35rem]">
@@ -248,12 +241,9 @@ function Index() {
           </div>
         </div>
 
-
-
-
         {/* Q&A panel: reads as its own page, cut off just below the logos */}
         <div className="mt-12 rounded-[2.5rem] border border-panel-border bg-panel px-5 pb-9 pt-7 shadow-[0_24px_50px_-30px_rgba(34,73,31,0.45)] sm:mt-16 sm:px-8 sm:pb-11 sm:pt-9">
-            <h2 className="mx-auto max-w-md font-display text-[1.45rem] font-semibold leading-tight text-balance sm:text-[1.8rem]">
+          <h2 className="mx-auto max-w-md font-display text-[1.45rem] font-semibold leading-tight text-balance sm:text-[1.8rem]">
             How do you answer all of these questions without burning out?
           </h2>
 
@@ -299,29 +289,23 @@ function Index() {
                 <div key={pair.question}>
                   <div className="flex justify-start">
                     <div className="wa-bubble max-w-[82%] rounded-[10px] rounded-tl-[3px] bg-white px-2.5 pb-1 pt-1.5 shadow-sm">
-                      <p className="text-[12.5px] leading-snug text-[#111b21]">
-                        {pair.question}
-                      </p>
-                      <p className="mt-0.5 text-right text-[9px] text-[#667781]">
+                      <p className="text-[12.5px] leading-snug text-[#111b21]">{pair.question}</p>
+                      <p className="mt-0.5 text-right text-[9px] text-[#667781]">13:4{index + 1}</p>
+                    </div>
+                  </div>
+                  <div className="mt-2 flex justify-end">
+                    <div className="wa-bubble max-w-[82%] rounded-[10px] rounded-tr-[3px] bg-[#d9fdd3] px-2.5 pb-1 pt-1.5 shadow-sm">
+                      <p className="text-[12.5px] leading-snug text-[#111b21]">{pair.reply}</p>
+                      <p className="mt-0.5 flex items-center justify-end gap-1 text-[9px] text-[#667781]">
                         13:4{index + 1}
+                        <CheckCheck className="h-3 w-3 text-[#53bdeb]" />
                       </p>
                     </div>
-                </div>
-                <div className="mt-2 flex justify-end">
-                  <div className="wa-bubble max-w-[82%] rounded-[10px] rounded-tr-[3px] bg-[#d9fdd3] px-2.5 pb-1 pt-1.5 shadow-sm">
-                    <p className="text-[12.5px] leading-snug text-[#111b21]">
-                      {pair.reply}
-                    </p>
-                    <p className="mt-0.5 flex items-center justify-end gap-1 text-[9px] text-[#667781]">
-                      13:4{index + 1}
-                      <CheckCheck className="h-3 w-3 text-[#53bdeb]" />
-                    </p>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
 
           {/* Official WhatsApp + Telegram glyphs — brand colours, like the mock above. */}
           <p className="mx-auto mt-10 max-w-xs font-display text-base font-semibold leading-snug text-balance sm:mt-12 sm:text-lg">
@@ -368,7 +352,6 @@ function Index() {
         </div>
 
         <StepCarousel3D steps={STEPS} />
-
       </section>
 
       {/* App Store badge between the carousel section and the footer */}
