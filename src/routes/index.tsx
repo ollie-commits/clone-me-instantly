@@ -196,7 +196,7 @@ function Index() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Download Dopply on the App Store"
-            className="inline-block transition-transform active:scale-95"
+            className="badge-pulse inline-block transition-transform active:scale-95"
           >
             <img
               src={appStoreBadge.url}
@@ -206,24 +206,23 @@ function Index() {
               className="w-[13.33rem] object-contain sm:w-64"
             />
           </a>
-          {/* Hand-drawn green arrow pointing up at the badge */}
-          <svg
-            aria-hidden
-            viewBox="0 0 36 44"
-            className="mt-1 h-9 w-7 text-accent"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth={3}
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <path d="M18 42 C 14 32, 12 22, 17 10" />
-            <path d="M9 17 C 12 14, 15 11.5, 17 9" />
-            <path d="M18.5 16.5 C 18 13, 17.5 10.5, 17 8.5" />
-          </svg>
-          {/* Mascot speaking the caption through a speech bubble */}
-          <div className="bounce-tandem mt-0 flex flex-col items-center">
-            <div className="relative z-10">
+          {/* Hand-drawn green arrow + mascot + caption, all bouncing in tandem */}
+          <div className="bounce-tandem mt-1 flex flex-col items-center">
+            <svg
+              aria-hidden
+              viewBox="0 0 36 44"
+              className="h-9 w-7 text-accent"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth={3}
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M18 42 C 14 32, 12 22, 17 10" />
+              <path d="M9 17 C 12 14, 15 11.5, 17 9" />
+              <path d="M18.5 16.5 C 18 13, 17.5 10.5, 17 8.5" />
+            </svg>
+            <div className="relative z-10 mt-1">
               <p className="whitespace-nowrap rounded-[1.1rem] bg-card px-3.5 py-2 font-display text-[13px] font-semibold leading-none text-accent shadow-[0_3px_14px_rgba(34,73,31,0.14)] sm:text-sm">
                 It's free to set up and launch!
               </p>
