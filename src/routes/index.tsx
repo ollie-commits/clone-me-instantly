@@ -189,21 +189,42 @@ function Index() {
         />
 
         {/* App Store badge — half the video's width on mobile, centred */}
-        <a
-          href="https://apps.apple.com/gb/app/dopply/id6775535561"
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="Download Dopply on the App Store"
-          className="mt-5 inline-block transition-transform active:scale-95"
-        >
-          <img
-            src={appStoreBadge.url}
-            alt="Download on the App Store"
-            width={336}
-            height={130}
-            className="w-[13.33rem] object-contain sm:w-64"
-          />
-        </a>
+        <div className="mt-5 flex flex-col items-center">
+          {/* App Store badge — half the video's width on mobile, centred */}
+          <a
+            href="https://apps.apple.com/gb/app/dopply/id6775535561"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Download Dopply on the App Store"
+            className="inline-block transition-transform active:scale-95"
+          >
+            <img
+              src={appStoreBadge.url}
+              alt="Download on the App Store"
+              width={336}
+              height={130}
+              className="w-[13.33rem] object-contain sm:w-64"
+            />
+          </a>
+          {/* Hand-drawn green arrow pointing up at the badge, caption below */}
+          <svg
+            aria-hidden
+            viewBox="0 0 36 44"
+            className="mt-1.5 h-9 w-7 text-accent"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth={3}
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <path d="M18 42 C 14 32, 12 22, 17 10" />
+            <path d="M9 17 C 12 14, 15 11.5, 17 9" />
+            <path d="M18.5 16.5 C 18 13, 17.5 10.5, 17 8.5" />
+          </svg>
+          <p className="mt-0.5 font-display text-sm font-semibold text-accent sm:text-base">
+            It's free to set up and launch!
+          </p>
+        </div>
 
 
 
