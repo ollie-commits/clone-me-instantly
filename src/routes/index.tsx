@@ -189,14 +189,7 @@ function Index() {
         </p>
       </header>
 
-      {/* Intro video: "Now there are two of you." Autoplays muted (browser
-          rule); viewer taps for sound and can pause via the controls. */}
-      <section className="mt-7 text-center sm:mt-12">
-        <IntroVideo
-          src={twoOfYouVideo.url}
-          label="Dopply video: now there are two of you"
-        />
-
+      <section className="mt-6 text-center sm:mt-8">
         {/* App Store badge — half the video's width on mobile, centred */}
         <div className="mt-5 flex flex-col items-center">
           {/* App Store badge — half the video's width on mobile, centred */}
