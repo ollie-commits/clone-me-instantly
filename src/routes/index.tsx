@@ -223,17 +223,17 @@ function Index() {
           </svg>
           {/* Mascot speaking the caption through a speech bubble */}
           <div className="mt-1 flex items-end justify-center">
-            <div className="relative mb-6 mr-3">
-              <p className="rounded-[1.15rem] bg-card px-4 py-2 font-display text-sm font-semibold leading-snug text-accent shadow-[0_3px_14px_rgba(34,73,31,0.14)] sm:text-base">
+            <div className="relative z-10 mb-7 mr-[-14px]">
+              <p className="whitespace-nowrap rounded-[1.1rem] bg-card px-3.5 py-2 font-display text-[13px] font-semibold leading-none text-accent shadow-[0_3px_14px_rgba(34,73,31,0.14)] sm:text-sm">
                 It's free to set up and launch!
               </p>
               <svg
                 aria-hidden
-                viewBox="0 0 22 20"
-                className="absolute -bottom-[13px] right-5 h-[18px] w-5 text-card"
+                viewBox="0 0 20 18"
+                className="absolute -bottom-[11px] right-4 h-[13px] w-4 text-card"
                 fill="currentColor"
               >
-                <path d="M2 0 H18 C 17.5 5.5, 14.5 11, 7 16 C 10.5 10.5, 9.5 5, 2 0 Z" />
+                <path d="M0 0 H16 C 15 6, 11 11, 3 17 C 7.5 11, 6.5 5, 0 0 Z" />
               </svg>
             </div>
             <img
