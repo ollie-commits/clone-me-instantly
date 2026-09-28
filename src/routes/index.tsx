@@ -221,9 +221,19 @@ function Index() {
             <path d="M9 17 C 12 14, 15 11.5, 17 9" />
             <path d="M18.5 16.5 C 18 13, 17.5 10.5, 17 8.5" />
           </svg>
-          <p className="mt-0.5 font-display text-sm font-semibold text-accent sm:text-base">
-            It's free to set up and launch!
-          </p>
+          <div className="mt-1 flex items-end justify-center gap-2 pl-8 sm:pl-12">
+            <p className="font-display text-sm font-semibold text-accent sm:text-base">
+              It's free to set up and launch!
+            </p>
+            <img
+              src="/images/mascot-cash.png"
+              alt="Dopply mascot collecting payouts from an ATM"
+              width={700}
+              height={312}
+              loading="lazy"
+              className="h-14 w-auto object-contain sm:h-16"
+            />
+          </div>
         </div>
 
 
